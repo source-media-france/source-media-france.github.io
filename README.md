@@ -1,8 +1,8 @@
 # SOURCE ? — le site de coulisses
 
-Le site public qui complète les vidéos de SOURCE ? : pour chaque vidéo, la transcription, les sources complètes, ce qu'elle montre et ne montre pas, les données et les calculs des graphiques, les noms des relecteurs, les corrections. Plus une page « Notions », la méthode, et qui nous sommes.
+Le site public qui complète les vidéos de SOURCE ? : pour chaque vidéo, le résumé, l'explication en images avec ses graphiques, les sources complètes, ce qu'elle montre et ne montre pas, les données et les calculs des graphiques, les noms des relecteurs, les corrections. Plus une page « Notions », la méthode, et qui nous sommes.
 
-C'est le « site de coulisses » décidé lors de la première réunion du comité (point 3 de l'ordre du jour, option C : transcription, sources, relecteurs, données et code, onglet notions).
+C'est le « site de coulisses » décidé lors de la première réunion du comité (point 3 de l'ordre du jour, option C : sources, relecteurs, données et code, onglet notions). Le comité avait aussi évoqué la transcription ; Hanna a choisi un résumé et une explication en images à la place.
 
 ## Ce qu'il y a dedans
 
@@ -19,7 +19,6 @@ a-propos.html         Mission, engagements, comité, indépendance, contribuer, 
 corrections.html      Toutes les corrections publiées, et comment signaler une erreur
 style.css             La charte graphique en CSS : couleurs, trois polices, crochets
 assets/logo/          Le logo (trois versions)
-assets/ecrans/        Les écrans des vidéos (copiés depuis SOURCE/gabarits/)
 ```
 
 Aucun outil à installer, aucune étape de construction : ce sont des pages HTML écrites à la main, qui se modifient dans n'importe quel éditeur de texte, ou directement sur GitHub (icône crayon sur un fichier). Les polices (Source Sans 3, Source Serif 4, Source Code Pro) sont chargées depuis Google Fonts.
@@ -27,9 +26,8 @@ Aucun outil à installer, aucune étape de construction : ce sont des pages HTML
 ## Ajouter une vidéo
 
 1. Copier `videos/_modele.html` sous un nom court, en minuscules, sans accent ni espace : `videos/mon-sujet.html`.
-2. Remplacer tout ce qui est entre `[[ ]]`. La transcription vient de la colonne « Voix » du script ; les sources, du document de script ; la relecture, du tableau de suivi.
+2. Remplacer tout ce qui est entre `[[ ]]`. Le résumé et la légende viennent du document de script ; les sources aussi ; la relecture, du tableau de suivi. Pas de transcription mot pour mot : la page est un petit article, pas le script.
 3. Écrire la section « L'explication, en images » comme un petit article : un chapeau, un ou deux paragraphes, et au moins un graphique. Un graphique se dessine en SVG directement dans la page (voir les trois pilotes : barres, grille de cent personnes, schémas à flèches), ou se met en image. Règles de la charte : un graphique montre une seule chose, fond papier, traits noirs, le jaune pour le seul élément dont on parle, la source entre crochets sous le graphique, jamais de rouge ni de vert.
-3 bis. Copier les écrans de la vidéo dans `assets/ecrans/mon-sujet/` (depuis `SOURCE/gabarits/`), ou supprimer la section « Les écrans ».
 4. Dans `videos/index.html`, ajouter une carte dans la section du thème (copier-coller une carte existante) avec la date de publication dans `data-date="AAAA-MM-JJ"` : c'est elle qui sert au classement par date. Si le thème n'a pas encore de carte, remplacer son encadré « Aucune vidéo » par un bloc `<div class="cartes">`. Si la vidéo est une des trois dernières, l'ajouter aussi dans `index.html` et retirer la plus ancienne.
 4 bis. Mettre les calculs de la vidéo dans un fichier `donnees/nom-de-la-video.csv` (une ligne par chiffre : valeur, champ, source, lien, statut) et le lier depuis la section « Nos calculs, à télécharger ». Les bases de données d'origine ne sont pas copiées : on met le lien vers l'organisme ou le fichier qu'il publie.
 5. Si la vidéo explique une notion nouvelle, ajouter une entrée dans `notions.html` (un titre `h2` avec un `id`, une définition, un exemple, le lien vers la vidéo), et une ligne dans le sommaire en haut de la page.

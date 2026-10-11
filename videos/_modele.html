@@ -4,7 +4,7 @@
   GABARIT D'UNE PAGE DE VIDÉO.
   1. Copier ce fichier sous un nom court en minuscules sans accent : videos/mon-sujet.html
   2. Remplacer tout ce qui est entre [[ ]].
-  3. Supprimer les sections qui ne servent pas (par exemple « Les données » s'il n'y a aucun graphique).
+  3. Supprimer les sections qui ne servent pas (par exemple « Les données » s'il n'y a aucun calcul).
   4. Ajouter la vidéo dans videos/index.html (une carte) et, si c'est une des trois dernières, dans index.html.
   5. Si la vidéo explique une notion nouvelle, l'ajouter dans notions.html.
 -->
@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>[[Titre de la vidéo]] · SOURCE ?</title>
-<meta name="description" content="[[La question, puis la réponse en une phrase.]] Transcription, sources, données et relecture de la vidéo.">
+<meta name="description" content="[[La question, puis la réponse en une phrase.]] Résumé, explication en images, sources, données et relecture de la vidéo.">
 <link rel="icon" href="../assets/logo/logo-jaune.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,11 +62,13 @@
   <table class="fiche">
     <tr><th>La question</th><td>[[La question précise.]]</td></tr>
     <tr><th>La réponse</th><td>[[La réponse en une ou deux phrases.]]</td></tr>
+    <tr><th>Résumé</th><td>[[Trois ou quatre phrases : le point de départ, ce que la vidéo explique, étape par étape, et sa conclusion.]]</td></tr>
     <tr><th>Avec</th><td><span class="cartouche">[[Prénom Nom · discipline]]</span></td></tr>
     <tr><th>Source principale</th><td><span class="crochet long">[[Auteur, année, revue ou organisme]]</span></td></tr>
     <tr><th>La limite</th><td>[[Ce que la vidéo ne permet pas de conclure.]]</td></tr>
     <tr><th>Thème</th><td><a href="index.html#[[ancre-du-theme]]">[[Nom du thème]]</a> · [[dossier, épisode N]]</td></tr>
     <tr><th>Notion</th><td><a href="../notions.html#[[ancre]]">[[Nom de la notion]]</a></td></tr>
+    <tr><th>Légende publiée</th><td class="gris">[[La question. La réponse. Avec : Prénom Nom, discipline. Source : auteurs, année, titre, lien.]]</td></tr>
   </table>
 
   <h2><span class="num">2</span>L'explication, en images</h2>
@@ -76,27 +78,13 @@
   <p>[[Un paragraphe d'explication, écrit comme on parle.]]</p>
 
   <figure class="figure">
-    [[Un graphique en SVG, ou une image : <img src="../assets/ecrans/[[dossier]]/02-....png" alt="[[description]]">. Un graphique montre une seule chose ; fond papier ; traits noirs ; le jaune pour le seul élément dont on parle ; pas de rouge ni de vert.]]
+    [[Un graphique en SVG, ou une image : <img src="../assets/[[image.png]]" alt="[[description]]">. Un graphique montre une seule chose ; fond papier ; traits noirs ; le jaune pour le seul élément dont on parle ; pas de rouge ni de vert.]]
     <figcaption>[[Ce que montre le graphique, en une phrase.]]<span class="src">[[[Auteur, année · champ de la donnée]]]</span></figcaption>
   </figure>
 
   <p>[[Un paragraphe de conclusion : la chose à retenir, et la limite.]]</p>
 
-  <h2><span class="num">3</span>La transcription</h2>
-
-  <p class="gris">Le texte dit dans la vidéo, mot pour mot, avec le moment et ce qui est à l'écran.</p>
-
-  <div class="transcription">
-    <div class="plan"><span class="temps">0-5 s</span><span class="ecran">écran : l'affirmation</span><p class="voix">[[Phrase d'accroche.]]</p></div>
-    <div class="plan"><span class="temps">5-6 s</span><span class="ecran">carton SOURCE ?</span><p class="voix gris">(son du carton)</p></div>
-    <div class="plan"><span class="temps">[[6-20 s]]</span><span class="ecran">[[chercheur, crochets et cartouche]]</span><p class="voix">[[Texte.]]</p></div>
-    <div class="plan"><span class="temps">[[20-40 s]]</span><span class="ecran">[[écran : …]]</span><p class="voix">[[Texte.]]</p></div>
-    <div class="plan"><span class="temps">[[40-60 s]]</span><span class="ecran">écran de fin</span><p class="voix">[[Conclusion.]]</p></div>
-  </div>
-
-  <p><strong>La légende publiée avec la vidéo.</strong> [[La question. La réponse. Avec : Prénom Nom, discipline. Source : auteurs, année, titre.]]</p>
-
-  <h2><span class="num">4</span>Ce qu'elle montre, ce qu'elle ne montre pas</h2>
+  <h2><span class="num">3</span>Ce qu'elle montre, ce qu'elle ne montre pas</h2>
 
   <div class="montre">
     <div class="oui">
@@ -115,7 +103,7 @@
     </div>
   </div>
 
-  <h2><span class="num">5</span>Les sources</h2>
+  <h2><span class="num">4</span>Les sources</h2>
 
   <p class="gris">Les articles et rapports cités, avec le lien vers le document d'origine.</p>
 
@@ -124,7 +112,7 @@
     <li>[[…]]</li>
   </ol>
 
-  <h2><span class="num">6</span>Les données et les calculs</h2>
+  <h2><span class="num">5</span>Les données et les calculs</h2>
 
   <h3>Les bases de données utilisées</h3>
 
@@ -145,17 +133,7 @@
 
   <p>[[Pour chaque graphique fait par nous : les données et la façon dont il a été construit. Supprimer les parties qui ne servent pas.]]</p>
 
-  <h2><span class="num">7</span>Les écrans</h2>
-
-  <p class="gris">Les images posées sur la vidéo, générées à partir de la charte graphique. Format vertical 1080 × 1920.</p>
-
-  <div class="ecrans">
-    <figure><img src="../assets/ecrans/[[dossier]]/01-affirmation.png" alt="[[Description de l'image]]" loading="lazy"><figcaption>01 · l'affirmation</figcaption></figure>
-    <figure><img src="../assets/ecrans/carton.png" alt="Carton : le logo SOURCE ? noir sur fond jaune" loading="lazy"><figcaption>carton</figcaption></figure>
-    <figure><img src="../assets/ecrans/[[dossier]]/06-fin.png" alt="[[Description de l'image]]" loading="lazy"><figcaption>06 · fin</figcaption></figure>
-  </div>
-
-  <h2><span class="num">8</span>Relecture et validation</h2>
+  <h2><span class="num">6</span>Relecture et validation</h2>
 
   <div class="table-scroll"><table>
     <tr><th>Étape</th><th>Qui</th><th>Statut</th></tr>
@@ -166,7 +144,7 @@
     <tr><td>Accord du chercheur sur la version montée</td><td>[[Prénom Nom]]</td><td>fait</td></tr>
   </table></div>
 
-  <h2><span class="num">9</span>Corrections</h2>
+  <h2><span class="num">7</span>Corrections</h2>
 
   <p>Aucune correction pour l'instant. Une erreur ? <a href="../corrections.html">Signalez-la</a>.</p>
 
