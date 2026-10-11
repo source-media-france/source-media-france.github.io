@@ -1,0 +1,6 @@
+etape,valeur,unite,source_ou_calcul,lien,statut
+hausse du risque de cancer colorectal par portion quotidienne de 50 g de viande transformee (risque relatif),18,pourcent,"CIRC/OMS, communique n 240, 26 octobre 2015 ; Bouvard et al., Lancet Oncology, 2015",https://www.iarc.who.int/wp-content/uploads/2018/07/pr240_E.pdf,a verifier : le par 50 g par jour dans le texte du communique
+risque de base : cancer colorectal au cours de la vie en France sans exposition (risque absolu),5,pour cent personnes,"ordre de grandeur ; a remplacer par le risque cumule 0-74 ans de Sante publique France / Francim, hommes et femmes",https://www.santepubliquefrance.fr/cancer-du-colon-rectum/donnees,a verifier
+risque avec exposition,5.9,pour cent personnes,5 x 1.18,,calcul
+personnes en plus sur cent,0.9,pour cent personnes,5.9 - 5,,calcul
+valeur dite dans la video,1,pour cent personnes,arrondi de 0.9,,calcul

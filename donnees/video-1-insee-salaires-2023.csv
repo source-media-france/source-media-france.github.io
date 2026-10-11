@@ -1,0 +1,6 @@
+indicateur,valeur_euros_net_par_mois,champ,source,lien,statut
+salaire net moyen en equivalent temps plein,2735,"secteur prive, France, 2023","Insee, base Tous salaries 2023 ; Insee Premiere n 2020, 23 octobre 2024",https://www.insee.fr/fr/statistiques/8270416,verifie sur insee.fr le 11 octobre 2026
+salaire net median en equivalent temps plein,2183,"secteur prive, France, 2023","Insee, base Tous salaries 2023 ; Insee Premiere n 2020, 23 octobre 2024",https://www.insee.fr/fr/statistiques/8270416,verifie sur insee.fr le 11 octobre 2026
+ecart moyenne moins mediane,552,calcul,"2735 - 2183",,calcul
+mediane en pourcentage sous la moyenne,20.2,calcul,"Insee Premiere n 2020 : la mediane est inferieure de 20,2 % a la moyenne",https://www.insee.fr/fr/statistiques/8270416,verifie sur insee.fr le 11 octobre 2026
+part des salaries sous le salaire moyen,,"secteur prive, France, 2023","non donnee dans l Insee Premiere ; a chercher dans le fichier de donnees ip2020.xlsx (distribution par deciles) ou a retirer de la voix",https://www.insee.fr/fr/statistiques/fichier/8270416/ip2020.xlsx,a verifier

@@ -24,7 +24,21 @@
 <header class="entete"><div class="wrap">
   <a class="logo" href="../index.html"><span class="c">[</span>SOURCE<span class="q">?</span><span class="c">]</span></a>
   <nav class="nav" aria-label="Navigation">
-    <a href="index.html" aria-current="page">Vidéos</a>
+    <details class="menu">
+      <summary aria-current="page">Vidéos</summary>
+      <div class="menu-liste">
+      <a href="../videos/index.html">Toutes les vidéos</a>
+      <a href="../videos/index.html#par-date">Par date de publication</a>
+      <span class="menu-titre">Par thème</span>
+      <a href="../videos/index.html#comprendre-les-chiffres">Comprendre les chiffres</a>
+      <a href="../videos/index.html#immigration">Immigration</a>
+      <a href="../videos/index.html#dette-publique">Dette publique</a>
+      <a href="../videos/index.html#corruption">Corruption</a>
+      <a href="../videos/index.html#violences">Violences sexistes et sexuelles</a>
+      <a href="../videos/index.html#logement">Logement</a>
+      <a href="../videos/index.html#education">Éducation</a>
+      </div>
+    </details>
     <a href="../notions.html">Notions</a>
     <a href="../methode.html">Méthode</a>
     <a href="../a-propos.html">À propos</a>
@@ -51,6 +65,7 @@
     <tr><th>Avec</th><td><span class="cartouche">[[Prénom Nom · discipline]]</span></td></tr>
     <tr><th>Source principale</th><td><span class="crochet long">[[Auteur, année, revue ou organisme]]</span></td></tr>
     <tr><th>La limite</th><td>[[Ce que la vidéo ne permet pas de conclure.]]</td></tr>
+    <tr><th>Thème</th><td><a href="index.html#[[ancre-du-theme]]">[[Nom du thème]]</a> · [[dossier, épisode N]]</td></tr>
     <tr><th>Notion</th><td><a href="../notions.html#[[ancre]]">[[Nom de la notion]]</a></td></tr>
   </table>
 
@@ -89,19 +104,33 @@
 
   <h2><span class="num">4</span>Les sources</h2>
 
+  <p class="gris">Les articles et rapports cités, avec le lien vers le document d'origine.</p>
+
   <ol>
-    <li><strong>[[Auteur(s)]]</strong>, « [[Titre]] », <em>[[Revue ou organisme]]</em>, [[année]]. [[Une phrase : ce que la source apporte, population, période, méthode.]] <a href="[[lien ou DOI]]">[[lien]]</a></li>
+    <li><strong>[[Auteur(s)]]</strong>, « [[Titre]] », <em>[[Revue ou organisme]]</em>, [[volume, année]]. [[Une phrase : ce que la source apporte, population, période, méthode. Accès libre ou payant.]] <a href="[[https://doi.org/… ou lien]]">[[doi.org/… ou adresse]]</a></li>
     <li>[[…]]</li>
   </ol>
 
   <h2><span class="num">5</span>Les données et les calculs</h2>
 
-  <p>[[Pour chaque chiffre dit ou affiché : sa valeur, sa source, la population, l'année, et le calcul s'il y en a un. Pour chaque graphique fait par nous : les données et la façon dont il a été construit. Supprimer cette section s'il n'y a ni calcul ni graphique.]]</p>
+  <h3>Les bases de données utilisées</h3>
+
+  <ul>
+    <li><strong>[[Nom de la base]]</strong> ([[organisme]]) : [[ce qu'elle contient, qui la produit]]. <a href="[[lien vers la base ou vers le fichier de données]]">[[lien]]</a></li>
+  </ul>
+
+  <h3>Nos calculs, à télécharger</h3>
+
+  <ul>
+    <li><a href="../donnees/[[nom-de-la-video]].csv" download>[[nom-de-la-video]].csv</a> : [[ce que contient le fichier]]. Déposer le fichier dans le dossier <code>donnees/</code>.</li>
+  </ul>
 
   <div class="table-scroll"><table>
-    <tr><th>Chiffre</th><th>Valeur dans la vidéo</th><th>Source et calcul</th></tr>
-    <tr><td>[[…]]</td><td class="mono">[[…]]</td><td>[[…]]</td></tr>
+    <tr><th>Chiffre</th><th>Valeur dans la vidéo</th><th>Statut</th></tr>
+    <tr><td>[[…]]</td><td class="mono">[[…]]</td><td>[[vérifié le … · à vérifier · calcul]]</td></tr>
   </table></div>
+
+  <p>[[Pour chaque graphique fait par nous : les données et la façon dont il a été construit. Supprimer les parties qui ne servent pas.]]</p>
 
   <h2><span class="num">6</span>Les écrans</h2>
 
@@ -144,5 +173,6 @@
   <p>Une erreur dans une vidéo ? <a href="../corrections.html">Signalez-la</a>. Vous êtes chercheur ? <a href="../a-propos.html#contribuer">Contribuez</a>.</p>
   <p class="meta">Site de coulisses · version de travail · octobre 2026</p>
 </div></footer>
+<script src="../site.js"></script>
 </body>
 </html>

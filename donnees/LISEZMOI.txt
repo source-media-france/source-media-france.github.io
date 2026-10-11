@@ -1,0 +1,7 @@
+Donnees et calculs des videos SOURCE ?
+
+Un fichier CSV par calcul fait dans une video (separateur : virgule, encodage UTF-8, point decimal).
+Chaque ligne donne la valeur, le champ (population, lieu, annee), la source ou le calcul, le lien, et le statut :
+"verifie" quand le chiffre a ete relu a la source, "a verifier" quand il vient d'une premiere lecture, "calcul" quand il est deduit des lignes precedentes.
+
+Les bases de donnees d'origine ne sont pas copiees ici : chaque page de video renvoie vers le site qui les publie (Insee, Sante publique France, CIRC...).

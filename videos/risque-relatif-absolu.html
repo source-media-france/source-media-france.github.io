@@ -16,7 +16,21 @@
 <header class="entete"><div class="wrap">
   <a class="logo" href="../index.html"><span class="c">[</span>SOURCE<span class="q">?</span><span class="c">]</span></a>
   <nav class="nav" aria-label="Navigation">
-    <a href="index.html" aria-current="page">Vidéos</a>
+    <details class="menu">
+      <summary aria-current="page">Vidéos</summary>
+      <div class="menu-liste">
+      <a href="../videos/index.html">Toutes les vidéos</a>
+      <a href="../videos/index.html#par-date">Par date de publication</a>
+      <span class="menu-titre">Par thème</span>
+      <a href="../videos/index.html#comprendre-les-chiffres">Comprendre les chiffres</a>
+      <a href="../videos/index.html#immigration">Immigration</a>
+      <a href="../videos/index.html#dette-publique">Dette publique</a>
+      <a href="../videos/index.html#corruption">Corruption</a>
+      <a href="../videos/index.html#violences">Violences sexistes et sexuelles</a>
+      <a href="../videos/index.html#logement">Logement</a>
+      <a href="../videos/index.html#education">Éducation</a>
+      </div>
+    </details>
     <a href="../notions.html">Notions</a>
     <a href="../methode.html">Méthode</a>
     <a href="../a-propos.html">À propos</a>
@@ -44,8 +58,9 @@
     <tr><th>La question</th><td>« 18 % de risque en plus », ça représente combien de personnes ?</td></tr>
     <tr><th>La réponse</th><td>Environ une personne sur cent. Le pourcentage dit combien de fois plus ; le nombre de personnes dit ce que ça change.</td></tr>
     <tr><th>Avec</th><td><span class="cartouche">Hanna Bony · économiste</span></td></tr>
-    <tr><th>Source principale</th><td><span class="crochet long">CIRC / OMS, 2015, monographie 114</span></td></tr>
+    <tr><th>Source principale</th><td><span class="crochet long"><a href="https://www.iarc.who.int/wp-content/uploads/2018/07/pr240_E.pdf">CIRC / OMS, 2015, monographie 114</a></span></td></tr>
     <tr><th>La limite</th><td>Un sur cent n'est pas rien à l'échelle d'un pays ; c'est pour une décision individuelle que le chiffre absolu compte.</td></tr>
+    <tr><th>Thème</th><td><a href="index.html#comprendre-les-chiffres">Comprendre les chiffres</a> · Les bases, épisode 9</td></tr>
     <tr><th>Notion</th><td><a href="../notions.html#risque-relatif-absolu">Risque relatif et risque absolu</a></td></tr>
   </table>
 
@@ -64,7 +79,7 @@
     <div class="plan"><span class="temps">80-87 s</span><span class="ecran">écran de fin</span><p class="voix">Donc la prochaine fois qu'un chiffre monte de 18 %, demandez : en plus de quoi ?</p></div>
   </div>
 
-  <p><strong>La légende publiée avec la vidéo.</strong> « 18 % de risque en plus », c'est combien de personnes ? Environ une sur cent : le pourcentage dit combien de fois plus, pas combien de personnes. Avec : Hanna Bony, économiste. Source : CIRC/OMS, monographie 114, 2015.</p>
+  <p><strong>La légende publiée avec la vidéo.</strong> « 18 % de risque en plus », c'est combien de personnes ? Environ une sur cent : le pourcentage dit combien de fois plus, pas combien de personnes. Avec : Hanna Bony, économiste. Source : CIRC/OMS, monographie 114, 2015, <a href="https://www.iarc.who.int/wp-content/uploads/2018/07/pr240_E.pdf">lien</a>.</p>
 
   <h2><span class="num">3</span>Ce qu'elle montre, ce qu'elle ne montre pas</h2>
 
@@ -89,18 +104,34 @@
 
   <h2><span class="num">4</span>Les sources</h2>
 
+  <p class="gris">Les articles et rapports cités, avec le lien vers le document d'origine.</p>
+
   <ol>
-    <li><strong>Centre international de recherche sur le cancer (CIRC)</strong>, agence de l'Organisation mondiale de la santé, <em>Monographie 114 : viande rouge et viande transformée</em>, 2015. Communiqué de presse d'octobre 2015 sur la classification de la viande transformée. <span class="meta">Lien à compléter vers le communiqué et la monographie sur iarc.who.int.</span></li>
-    <li><strong>Bouvard V. et co-auteurs</strong>, pour le groupe de travail du CIRC, « Carcinogenicity of consumption of red and processed meat », <em>The Lancet Oncology</em>, 2015. Le résumé de l'évaluation, avec le « 18 % par portion de 50 g par jour ». <span class="meta">Lien à compléter (DOI à vérifier).</span></li>
-    <li><strong>Risque cumulé de cancer colorectal en France</strong>, 0-74 ans, hommes et femmes : Santé publique France ou Institut national du cancer, dernière estimation. <span class="meta">Source exacte à fixer avant publication.</span></li>
+    <li><strong>Centre international de recherche sur le cancer (CIRC, en anglais IARC)</strong>, agence de l'Organisation mondiale de la santé, communiqué de presse n° 240, « IARC Monographs evaluate consumption of red meat and processed meat », 26 octobre 2015. C'est le texte d'où vient le « 18 % par portion de 50 g par jour ». <a href="https://www.iarc.who.int/wp-content/uploads/2018/07/pr240_E.pdf">Communiqué (PDF, en anglais)</a> · <a href="https://www.iarc.who.int/news-events/iarc-monographs-volume-114-evaluation-of-consumption-of-red-meat-and-processed-meat">page de l'évaluation, avec le document questions-réponses</a>.</li>
+    <li><strong>Bouvard V., Loomis D., Guyton K. Z., Grosse Y., El Ghissassi F., Benbrahim-Tallaa L. et co-auteurs</strong>, pour le groupe de travail du CIRC, « Carcinogenicity of consumption of red and processed meat », <em>The Lancet Oncology</em>, vol. 16, n° 16, 2015. Le résumé de l'évaluation, publié le jour du communiqué. <a href="https://doi.org/10.1016/S1470-2045(15)00444-1">doi.org/10.1016/S1470-2045(15)00444-1</a></li>
+    <li><strong>CIRC</strong>, <em>Monographie 114 : Red Meat and Processed Meat</em>, 2018. Le rapport complet, qui passe en revue plus de 800 études. <a href="https://monographs.iarc.who.int/">monographs.iarc.who.int</a>, volume 114.</li>
+    <li><strong>Risque de cancer colorectal en France</strong> : Santé publique France, Institut national du cancer et réseau Francim, estimations nationales de l'incidence 2023. Page de données : <a href="https://www.santepubliquefrance.fr/cancer-du-colon-rectum/donnees">santepubliquefrance.fr, cancer du côlon-rectum</a> · <a href="https://www.cancer.fr/professionnels-de-sante/statistiques-et-chiffres-sur-les-cancers/epidemiologie-des-cancers/cancer-colorectal">cancer.fr, épidémiologie des cancers du côlon-rectum</a> · <a href="https://beh.santepubliquefrance.fr/beh/2023/12-13/2023_12-13_1.html">Bulletin épidémiologique hebdomadaire, estimations 2023</a>. <span class="meta">Le risque cumulé 0-74 ans, hommes et femmes, reste à relever dans ces documents.</span></li>
   </ol>
 
   <h2><span class="num">5</span>Les données et les calculs</h2>
 
+  <h3>Les bases de données utilisées</h3>
+
+  <ul>
+    <li><strong>Les études rassemblées par le CIRC</strong> : le 18 % vient d'une synthèse d'études de cohortes (des dizaines de milliers de personnes suivies pendant des années), reprise dans la monographie 114. Ce ne sont pas des données téléchargeables ; les études sont listées dans la monographie.</li>
+    <li><strong>Les registres des cancers (réseau Francim)</strong> et les estimations nationales de Santé publique France, d'où doit venir le risque de base. Les indicateurs par région sont consultables sur <a href="https://geodes.santepubliquefrance.fr/">Géodes</a>, l'observatoire de Santé publique France.</li>
+  </ul>
+
+  <h3>Nos calculs, à télécharger</h3>
+
+  <ul>
+    <li><a href="../donnees/video-2-risque-relatif-absolu.csv" download>video-2-risque-relatif-absolu.csv</a> : le passage de « 18 % en plus » à « une personne sur cent », ligne par ligne.</li>
+  </ul>
+
   <div class="table-scroll"><table>
     <tr><th>Chiffre</th><th>Valeur dans la vidéo</th><th>Statut</th></tr>
-    <tr><td>Hausse du risque de cancer colorectal associée à chaque portion quotidienne de 50 g de viande transformée (risque relatif)</td><td class="mono">+ 18 %</td><td><span class="crochet">à vérifier</span> : le « par 50 g par jour » dans le communiqué du CIRC ou le résumé du <em>Lancet Oncology</em></td></tr>
-    <tr><td>Risque de base : cancer colorectal au cours de la vie, en France (risque absolu)</td><td class="mono">environ 5 sur 100</td><td><span class="crochet">à vérifier</span> : si c'est plutôt 4, dire « 4 et 5 » et changer la grille des écrans 03 et 04</td></tr>
+    <tr><td>Hausse du risque de cancer colorectal associée à chaque portion quotidienne de 50 g de viande transformée (risque relatif)</td><td class="mono">+ 18 %</td><td><span class="crochet">à vérifier</span> : relire le « par 50 g par jour » dans le communiqué n° 240</td></tr>
+    <tr><td>Risque de base : cancer colorectal au cours de la vie, en France (risque absolu)</td><td class="mono">environ 5 sur 100</td><td><span class="crochet">à vérifier</span> : prendre le risque cumulé 0-74 ans de Santé publique France ; si c'est plutôt 4, dire « 4 et 5 » et changer la grille des écrans 03 et 04</td></tr>
     <tr><td>Risque avec exposition</td><td class="mono">5 × 1,18 = 5,9, dit « environ 6 »</td><td>calcul</td></tr>
     <tr><td>Personnes en plus, sur cent</td><td class="mono">5,9 − 5 = 0,9, dit « une personne »</td><td>calcul</td></tr>
   </table></div>
@@ -145,5 +176,6 @@
   <p>Une erreur dans une vidéo ? <a href="../corrections.html">Signalez-la</a>. Vous êtes chercheur ? <a href="../a-propos.html#contribuer">Contribuez</a>.</p>
   <p class="meta">Site de coulisses · version de travail · octobre 2026</p>
 </div></footer>
+<script src="../site.js"></script>
 </body>
 </html>

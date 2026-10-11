@@ -11,6 +11,8 @@ index.html            Accueil : ce qu'est SOURCE ?, les dernières vidéos, les 
 videos/index.html     Toutes les vidéos, et la série « Les bases »
 videos/*.html         Une page par vidéo (trois pilotes pour l'instant)
 videos/_modele.html   Le gabarit à copier pour une nouvelle vidéo
+donnees/              Nos calculs en CSV, un fichier par vidéo, à télécharger depuis sa page
+site.js               Le seul script : menu déroulant, et classement par thème / par date
 notions.html          Les mots qu'on emploie, expliqués une fois
 methode.html          Comment une vidéo est fabriquée, qui vérifie quoi
 a-propos.html         Mission, engagements, comité, indépendance, contribuer, contact
@@ -27,9 +29,14 @@ Aucun outil à installer, aucune étape de construction : ce sont des pages HTML
 1. Copier `videos/_modele.html` sous un nom court, en minuscules, sans accent ni espace : `videos/mon-sujet.html`.
 2. Remplacer tout ce qui est entre `[[ ]]`. La transcription vient de la colonne « Voix » du script ; les sources, du document de script ; la relecture, du tableau de suivi.
 3. Copier les écrans de la vidéo dans `assets/ecrans/mon-sujet/` (depuis `SOURCE/gabarits/`), ou supprimer la section « Les écrans ».
-4. Ajouter une carte dans `videos/index.html` (copier-coller une carte existante). Si la vidéo est une des trois dernières, l'ajouter aussi dans `index.html` et retirer la plus ancienne.
+4. Dans `videos/index.html`, ajouter une carte dans la section du thème (copier-coller une carte existante) avec la date de publication dans `data-date="AAAA-MM-JJ"` : c'est elle qui sert au classement par date. Si le thème n'a pas encore de carte, remplacer son encadré « Aucune vidéo » par un bloc `<div class="cartes">`. Si la vidéo est une des trois dernières, l'ajouter aussi dans `index.html` et retirer la plus ancienne.
+4 bis. Mettre les calculs de la vidéo dans un fichier `donnees/nom-de-la-video.csv` (une ligne par chiffre : valeur, champ, source, lien, statut) et le lier depuis la section « Nos calculs, à télécharger ». Les bases de données d'origine ne sont pas copiées : on met le lien vers l'organisme ou le fichier qu'il publie.
 5. Si la vidéo explique une notion nouvelle, ajouter une entrée dans `notions.html` (un titre `h2` avec un `id`, une définition, un exemple, le lien vers la vidéo), et une ligne dans le sommaire en haut de la page.
 6. Quand la vidéo est publiée : remplacer le badge « pilote » par « publiée le … » et ajouter les liens TikTok et Instagram.
+
+## Ajouter un thème
+
+Dans `videos/index.html`, copier une section `<section class="theme" id="...">` avec sa question-cadre, puis ajouter le lien `videos/index.html#...` dans le menu déroulant de **toutes** les pages (le bloc `<div class="menu-liste">` est identique partout : un chercher-remplacer suffit).
 
 ## Corriger une erreur publiée
 
@@ -70,7 +77,8 @@ Ces points sont marqués dans les pages par un encadré gris « EN DISCUSSION »
 - **La règle de relecture** : un second chercheur quand le sujet le justifie (texte actuel), ou deux pairs extérieurs pour chaque vidéo (point 3). `methode.html`, section 7.
 - **Les corrections graduées** : coquille en description, vidéo pour une erreur de fond (point 2). `methode.html` section 10 et `corrections.html`.
 - **L'adresse de courriel** de contact. `a-propos.html`, section 8, et `corrections.html`.
-- **Les chiffres `[à vérifier]`** des trois pilotes, et les liens vers les sources (Insee Première 2025, CIRC 2015 et *Lancet Oncology* 2015, Messerli 2012 *NEJM*), à compléter dans chaque page de vidéo une fois ouverts à la source.
+- **Les chiffres `[à vérifier]`** des trois pilotes. Les liens vers les sources sont en place (Insee Première n° 2020 d'octobre 2024, communiqué CIRC n° 240 et *Lancet Oncology* 2015, Messerli 2012 *NEJM*). Les salaires moyen et médian ont été vérifiés sur insee.fr le 11 octobre 2026 ; reste le « deux sur trois », le « 18 % par 50 g », le risque de base de cancer colorectal, et le r = 0,79.
+- **Une correction dans le script et l'écran de fin de la vidéo 1** : la publication Insee est d'octobre 2024, pas de 2025 (`pilotes.tex` et `make-gabarits.py`).
 - **Les noms des relecteurs** des trois pilotes, section « Relecture et validation » de chaque page.
 - **Les plateformes** : les pages mentionnent TikTok et Instagram ; ajouter YouTube Shorts, X ou LinkedIn si le comité les retient (point 2).
 

@@ -16,7 +16,21 @@
 <header class="entete"><div class="wrap">
   <a class="logo" href="../index.html"><span class="c">[</span>SOURCE<span class="q">?</span><span class="c">]</span></a>
   <nav class="nav" aria-label="Navigation">
-    <a href="index.html" aria-current="page">Vidéos</a>
+    <details class="menu">
+      <summary aria-current="page">Vidéos</summary>
+      <div class="menu-liste">
+      <a href="../videos/index.html">Toutes les vidéos</a>
+      <a href="../videos/index.html#par-date">Par date de publication</a>
+      <span class="menu-titre">Par thème</span>
+      <a href="../videos/index.html#comprendre-les-chiffres">Comprendre les chiffres</a>
+      <a href="../videos/index.html#immigration">Immigration</a>
+      <a href="../videos/index.html#dette-publique">Dette publique</a>
+      <a href="../videos/index.html#corruption">Corruption</a>
+      <a href="../videos/index.html#violences">Violences sexistes et sexuelles</a>
+      <a href="../videos/index.html#logement">Logement</a>
+      <a href="../videos/index.html#education">Éducation</a>
+      </div>
+    </details>
     <a href="../notions.html">Notions</a>
     <a href="../methode.html">Méthode</a>
     <a href="../a-propos.html">À propos</a>
@@ -44,8 +58,9 @@
     <tr><th>La question</th><td>Quand deux choses évoluent ensemble, comment sait-on si l'une provoque l'autre ?</td></tr>
     <tr><th>La réponse</th><td>On ne le sait pas d'emblée. Deux pièges : la cause cachée et le sens de la flèche. La recherche a trois questions pour les contourner.</td></tr>
     <tr><th>Avec</th><td><span class="cartouche">Hanna Bony · économiste</span></td></tr>
-    <tr><th>Source principale</th><td><span class="crochet long">Messerli, 2012, New England Journal of Medicine</span></td></tr>
+    <tr><th>Source principale</th><td><span class="crochet long"><a href="https://doi.org/10.1056/NEJMon1211064">Messerli, 2012, New England Journal of Medicine</a></span></td></tr>
     <tr><th>La limite</th><td>La vidéo ne dit pas comment on tranche : c'est l'épisode suivant, sur le tirage au sort.</td></tr>
+    <tr><th>Thème</th><td><a href="index.html#comprendre-les-chiffres">Comprendre les chiffres</a> · Les bases, épisode 1</td></tr>
     <tr><th>Notion</th><td><a href="../notions.html#correlation-causalite">Corrélation et causalité</a></td></tr>
   </table>
 
@@ -64,7 +79,7 @@
     <div class="plan"><span class="temps">120-128 s</span><span class="ecran">écran de fin</span><p class="voix">Deux choses qui vont ensemble, c'est une question. Pas une réponse. La prochaine fois : comment on tranche. Avec un tirage au sort.</p></div>
   </div>
 
-  <p><strong>La légende publiée avec la vidéo.</strong> Quand deux choses évoluent ensemble, est-ce que l'une cause l'autre ? Pas forcément : il peut y avoir une cause cachée, ou la flèche peut aller dans l'autre sens. Avec : Hanna Bony, économiste. Source : Messerli, 2012, NEJM.</p>
+  <p><strong>La légende publiée avec la vidéo.</strong> Quand deux choses évoluent ensemble, est-ce que l'une cause l'autre ? Pas forcément : il peut y avoir une cause cachée, ou la flèche peut aller dans l'autre sens. Avec : Hanna Bony, économiste. Source : Messerli, 2012, NEJM, <a href="https://doi.org/10.1056/NEJMon1211064">lien</a>.</p>
 
   <h2><span class="num">3</span>Ce qu'elle montre, ce qu'elle ne montre pas</h2>
 
@@ -89,20 +104,28 @@
 
   <h2><span class="num">4</span>Les sources</h2>
 
+  <p class="gris">Les articles cités, avec le lien vers le document d'origine.</p>
+
   <ol>
-    <li><strong>Messerli F. H.</strong>, « Chocolate Consumption, Cognitive Function, and Nobel Laureates », <em>New England Journal of Medicine</em>, 2012. L'article compare la consommation de chocolat par habitant et le nombre de prix Nobel par habitant, pays par pays ; l'auteur le présente comme une illustration du piège de la corrélation. <span class="meta">Lien à compléter (DOI à vérifier).</span></li>
+    <li><strong>Messerli F. H.</strong>, « Chocolate Consumption, Cognitive Function, and Nobel Laureates », <em>New England Journal of Medicine</em>, vol. 367, p. 1562-1564, 18 octobre 2012. Une note de deux pages qui compare, pour 23 pays, la consommation de chocolat par habitant et le nombre de prix Nobel par dix millions d'habitants ; l'auteur la présente lui-même comme une illustration du piège de la corrélation. Accès payant ; le résumé est libre. <a href="https://doi.org/10.1056/NEJMon1211064">doi.org/10.1056/NEJMon1211064</a></li>
   </ol>
 
-  <p>L'écran 01 est un schéma inspiré du graphique de l'article, pas le graphique lui-même ; il est marqué « schéma » à l'écran.</p>
+  <p>L'écran 01 est un schéma inspiré du graphique de l'article, pas le graphique lui-même ; il est marqué « schéma » à l'écran. L'exemple des policiers et des délits est une illustration classique, sans chiffre ni source à l'écran.</p>
 
   <h2><span class="num">5</span>Les données et les calculs</h2>
 
+  <h3>Les bases de données utilisées</h3>
+
+  <ul>
+    <li><strong>Les données de l'article de Messerli</strong> : la consommation de chocolat par habitant vient des statistiques des industriels du chocolat (Chocosuisse, Theobroma cacao, Caobisco), et le nombre de prix Nobel par pays de la liste officielle des lauréats, consultable sur <a href="https://www.nobelprize.org/prizes/lists/all-nobel-prizes/">nobelprize.org</a>. Les valeurs pays par pays sont dans le graphique de l'article. <span class="crochet">à vérifier</span> en rouvrant l'article.</li>
+  </ul>
+
+  <p>Cette vidéo ne contient aucun graphique calculé par nous : les écrans 02 à 05 sont des schémas (deux boîtes et une flèche) qui n'utilisent pas de données. Il n'y a donc pas de fichier à télécharger.</p>
+
   <div class="table-scroll"><table>
     <tr><th>Chiffre</th><th>Valeur</th><th>Statut</th></tr>
-    <tr><td>Corrélation entre consommation de chocolat par habitant et prix Nobel par habitant, dans l'article de Messerli</td><td class="mono">r = 0,79</td><td><span class="crochet">à vérifier</span> ; le chiffre n'est pas dit dans la vidéo</td></tr>
+    <tr><td>Corrélation entre consommation de chocolat par habitant et prix Nobel par habitant, dans l'article de Messerli (23 pays)</td><td class="mono">r = 0,79</td><td><span class="crochet">à vérifier</span> ; le chiffre n'est pas dit dans la vidéo</td></tr>
   </table></div>
-
-  <p>Cette vidéo ne contient aucun graphique calculé par nous : les écrans 02 à 05 sont des schémas (deux boîtes et une flèche) qui n'utilisent pas de données.</p>
 
   <h2><span class="num">6</span>Les écrans</h2>
 
@@ -142,5 +165,6 @@
   <p>Une erreur dans une vidéo ? <a href="../corrections.html">Signalez-la</a>. Vous êtes chercheur ? <a href="../a-propos.html#contribuer">Contribuez</a>.</p>
   <p class="meta">Site de coulisses · version de travail · octobre 2026</p>
 </div></footer>
+<script src="../site.js"></script>
 </body>
 </html>

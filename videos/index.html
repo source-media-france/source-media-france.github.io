@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vidéos · SOURCE ?</title>
-<meta name="description" content="Toutes les vidéos SOURCE ?, avec pour chacune la transcription, les sources, les relecteurs et les données. Et la série « Les bases », seize vidéos pour apprendre à lire un chiffre et une étude.">
+<meta name="description" content="Toutes les vidéos SOURCE ?, classées par thème ou par date de publication, avec pour chacune la transcription, les sources, les données et les relecteurs.">
 <link rel="icon" href="../assets/logo/logo-jaune.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,21 @@
 <header class="entete"><div class="wrap">
   <a class="logo" href="../index.html"><span class="c">[</span>SOURCE<span class="q">?</span><span class="c">]</span></a>
   <nav class="nav" aria-label="Navigation">
-    <a href="index.html" aria-current="page">Vidéos</a>
+    <details class="menu">
+      <summary aria-current="page">Vidéos</summary>
+      <div class="menu-liste">
+      <a href="index.html">Toutes les vidéos</a>
+      <a href="index.html#par-date">Par date de publication</a>
+      <span class="menu-titre">Par thème</span>
+      <a href="index.html#comprendre-les-chiffres">Comprendre les chiffres</a>
+      <a href="index.html#immigration">Immigration</a>
+      <a href="index.html#dette-publique">Dette publique</a>
+      <a href="index.html#corruption">Corruption</a>
+      <a href="index.html#violences">Violences sexistes et sexuelles</a>
+      <a href="index.html#logement">Logement</a>
+      <a href="index.html#education">Éducation</a>
+      </div>
+    </details>
     <a href="../notions.html">Notions</a>
     <a href="../methode.html">Méthode</a>
     <a href="../a-propos.html">À propos</a>
@@ -26,61 +40,124 @@
 <section class="titre"><div class="wrap">
   <p class="sur">vidéos</p>
   <h1>Les vidéos, et ce qu'il y a derrière</h1>
-  <p class="sous">Une page par vidéo : la question, la réponse, le texte mot pour mot, les sources, les limites, qui a relu.</p>
+  <p class="sous">Une page par vidéo : la question, la réponse, le texte mot pour mot, les sources et leurs liens, les données, qui a relu.</p>
 </div></section>
 
 <main id="contenu" class="contenu"><div class="wrap">
 
-  <h2><span class="num">1</span>Les pilotes</h2>
+  <p>Les vidéos sont rangées par thème. Chaque thème est un dossier porté par un membre du comité, découpé en épisodes qui se comprennent chacun seuls. On peut aussi les voir dans l'ordre de publication.</p>
 
-  <p>Les trois premières vidéos sont des pilotes : elles suivent tout le circuit, du script au montage, pour tester le format avant le lancement. Elles ne sont pas publiées sur les réseaux. Leurs pages sont complètes ; les chiffres marqués <span class="crochet">à vérifier</span> sont en cours de vérification à la source.</p>
-
-  <div class="cartes">
-    <article class="carte">
-      <span class="format">LE CHIFFRE · 80 s · Les bases, épisode 8</span>
-      <h3><a href="moyenne-mediane.html">Le Français « moyen » existe-t-il ?</a></h3>
-      <p class="dit">« Le salaire moyen, c'est 2 735 euros. Vous gagnez moins ? Vous êtes dans la moitié basse. »</p>
-      <p class="avec">Avec <span class="cartouche">Hanna Bony · économiste</span></p>
-    </article>
-    <article class="carte">
-      <span class="format">LE CHIFFRE · 85 s · Les bases, épisode 9</span>
-      <h3><a href="risque-relatif-absolu.html">18 % en plus de quoi ?</a></h3>
-      <p class="dit">« La charcuterie augmente le risque de cancer de 18 %. »</p>
-      <p class="avec">Avec <span class="cartouche">Hanna Bony · économiste</span></p>
-    </article>
-    <article class="carte">
-      <span class="format">3 MINUTES AVEC… · 2 min · Les bases, épisode 1</span>
-      <h3><a href="correlation-causalite.html">Est-ce que l'une cause l'autre ?</a></h3>
-      <p class="dit">« Les pays qui mangent le plus de chocolat ont le plus de prix Nobel. »</p>
-      <p class="avec">Avec <span class="cartouche">Hanna Bony · économiste</span></p>
-    </article>
+  <div class="vues" id="vues" hidden>
+    <button type="button" data-vue="theme" aria-pressed="true">Par thème</button>
+    <button type="button" data-vue="date" aria-pressed="false">Par date</button>
   </div>
 
-  <h2><span class="num">2</span>La série « Les bases »</h2>
+  <div id="vue-theme">
 
-  <p>Seize vidéos pour apprendre à lire un chiffre ou une étude sans se faire avoir. Une série de fond, sans lien avec l'actualité : les autres vidéos pourront y renvoyer au lieu de tout réexpliquer. Chaque épisode se comprend seul, et repose sur un exemple qui se raconte en une phrase.</p>
+    <section class="theme" id="comprendre-les-chiffres">
+      <h2><span class="num">1</span>Comprendre les chiffres</h2>
+      <p class="cadre">Comment lire un chiffre ou une étude sans se faire avoir ?</p>
+      <p>Une série de fond, sans lien avec l'actualité, appelée « Les bases » : seize vidéos, une confusion par vidéo. Les autres thèmes pourront y renvoyer au lieu de tout réexpliquer. Les trois premières sont des pilotes, non publiées, qui servent à tester le format ; les chiffres marqués <span class="crochet">à vérifier</span> sont en cours de vérification.</p>
 
-  <div class="table-scroll"><table>
-    <tr><th>Ép.</th><th>Vidéo</th><th>Format</th><th>L'exemple</th><th>Statut</th></tr>
-    <tr><td class="mono">1</td><td><a href="correlation-causalite.html">Est-ce que l'une cause l'autre ?</a></td><td class="mono">3 MINUTES AVEC</td><td>Les pays qui mangent le plus de chocolat ont le plus de prix Nobel.</td><td><span class="statut">pilote</span></td></tr>
-    <tr><td class="mono">2</td><td>Toutes les preuves se valent-elles ?</td><td class="mono">3 MINUTES AVEC</td><td>Aucune étude n'a prouvé que le parachute sauve des vies.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">3</td><td>« Publié dans une revue à comité de lecture »</td><td class="mono">REACT</td><td>Le canular « le chocolat fait maigrir », repris dans vingt pays.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">4</td><td>Ce chiffre est-il grand ou petit ?</td><td class="mono">LE CHIFFRE</td><td>La Chine, premier pollueur en total, moitié moins qu'un Américain par habitant.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">5</td><td>Lire un chiffre en dix secondes</td><td class="mono">LE CHIFFRE</td><td>Les femmes gagnent 24 %, 14 % ou 4 % de moins : les trois sont justes.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">6</td><td>Un milliard, c'est beaucoup ?</td><td class="mono">LE CHIFFRE</td><td>Un million de secondes : 11 jours. Un milliard : 31 ans.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">7</td><td>Dette et déficit</td><td class="mono">LE CHIFFRE</td><td>La baignoire et le robinet.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">8</td><td><a href="moyenne-mediane.html">Le Français « moyen » existe-t-il ?</a></td><td class="mono">LE CHIFFRE</td><td>Dix personnes, neuf à 2 000 €, une à 20 000 €.</td><td><span class="statut">pilote</span></td></tr>
-    <tr><td class="mono">9</td><td><a href="risque-relatif-absolu.html">18 % en plus de quoi ?</a></td><td class="mono">LE CHIFFRE</td><td>La charcuterie : +18 %, soit une personne sur cent.</td><td><span class="statut">pilote</span></td></tr>
-    <tr><td class="mono">10</td><td>Comment 1 000 personnes représentent-elles un pays ?</td><td class="mono">3 MINUTES AVEC</td><td>La cuillère de soupe, et le sondage de 1936 qui s'est trompé avec 2 millions de réponses.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">11</td><td>« Statistiquement significatif »</td><td class="mono">REACT</td><td>Facebook a manipulé 700 000 fils : un mot sur mille.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">12</td><td>Comment sait-on qu'une politique a marché ?</td><td class="mono">3 MINUTES AVEC</td><td>Le rhume de sept jours, les loyers parisiens, les villages tirés au sort.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">13</td><td>Pourquoi les gens qui font X vont-ils mieux ?</td><td class="mono">REACT</td><td>Les avions criblés de balles qui sont rentrés.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">14</td><td>Les prix d'avant étaient-ils plus bas ?</td><td class="mono">LE CHIFFRE</td><td>Avatar n'est pas le plus gros succès du cinéma : en dollars d'aujourd'hui, c'est un film de 1939.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">15</td><td>Une étude dit blanc, une autre noir</td><td class="mono">L'ÉTUDE</td><td>Cent études refaites, une sur trois a tenu.</td><td class="gris">scriptée</td></tr>
-    <tr><td class="mono">16</td><td>Ce graphique dit-il la vérité ?</td><td class="mono">LE CHIFFRE</td><td>Le même chômage, avec et sans son axe.</td><td class="gris">scriptée</td></tr>
-  </table></div>
+      <div class="cartes">
+        <article class="carte" data-date="2026-10-11" data-ep="8">
+          <span class="format">LE CHIFFRE · 80 s · épisode 8 · pilote</span>
+          <h3><a href="moyenne-mediane.html">Le Français « moyen » existe-t-il ?</a></h3>
+          <p class="dit">« Le salaire moyen, c'est 2 735 euros. Vous gagnez moins ? Vous êtes dans la moitié basse. »</p>
+          <p class="avec">Avec <span class="cartouche">Hanna Bony · économiste</span></p>
+        </article>
+        <article class="carte" data-date="2026-10-11" data-ep="9">
+          <span class="format">LE CHIFFRE · 85 s · épisode 9 · pilote</span>
+          <h3><a href="risque-relatif-absolu.html">18 % en plus de quoi ?</a></h3>
+          <p class="dit">« La charcuterie augmente le risque de cancer de 18 %. »</p>
+          <p class="avec">Avec <span class="cartouche">Hanna Bony · économiste</span></p>
+        </article>
+        <article class="carte" data-date="2026-10-11" data-ep="1">
+          <span class="format">3 MINUTES AVEC… · 2 min · épisode 1 · pilote</span>
+          <h3><a href="correlation-causalite.html">Est-ce que l'une cause l'autre ?</a></h3>
+          <p class="dit">« Les pays qui mangent le plus de chocolat ont le plus de prix Nobel. »</p>
+          <p class="avec">Avec <span class="cartouche">Hanna Bony · économiste</span></p>
+        </article>
+      </div>
 
-  <p class="gris">« Scriptée » : le texte est écrit et relu, la vidéo n'est pas encore tournée. Sa page apparaîtra ici quand elle sera publiée.</p>
+      <h3>Les seize épisodes de la série</h3>
+      <div class="table-scroll"><table>
+        <tr><th>Ép.</th><th>Vidéo</th><th>Format</th><th>L'exemple</th><th>Statut</th></tr>
+        <tr><td class="mono">1</td><td><a href="correlation-causalite.html">Est-ce que l'une cause l'autre ?</a></td><td class="mono">3 MINUTES AVEC</td><td>Les pays qui mangent le plus de chocolat ont le plus de prix Nobel.</td><td><span class="statut">pilote</span></td></tr>
+        <tr><td class="mono">2</td><td>Toutes les preuves se valent-elles ?</td><td class="mono">3 MINUTES AVEC</td><td>Aucune étude n'a prouvé que le parachute sauve des vies.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">3</td><td>« Publié dans une revue à comité de lecture »</td><td class="mono">REACT</td><td>Le canular « le chocolat fait maigrir », repris dans vingt pays.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">4</td><td>Ce chiffre est-il grand ou petit ?</td><td class="mono">LE CHIFFRE</td><td>La Chine, premier pollueur en total, moitié moins qu'un Américain par habitant.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">5</td><td>Lire un chiffre en dix secondes</td><td class="mono">LE CHIFFRE</td><td>Les femmes gagnent 24 %, 14 % ou 4 % de moins : les trois sont justes.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">6</td><td>Un milliard, c'est beaucoup ?</td><td class="mono">LE CHIFFRE</td><td>Un million de secondes : 11 jours. Un milliard : 31 ans.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">7</td><td>Dette et déficit</td><td class="mono">LE CHIFFRE</td><td>La baignoire et le robinet.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">8</td><td><a href="moyenne-mediane.html">Le Français « moyen » existe-t-il ?</a></td><td class="mono">LE CHIFFRE</td><td>Dix personnes, neuf à 2 000 €, une à 20 000 €.</td><td><span class="statut">pilote</span></td></tr>
+        <tr><td class="mono">9</td><td><a href="risque-relatif-absolu.html">18 % en plus de quoi ?</a></td><td class="mono">LE CHIFFRE</td><td>La charcuterie : +18 %, soit une personne sur cent.</td><td><span class="statut">pilote</span></td></tr>
+        <tr><td class="mono">10</td><td>Comment 1 000 personnes représentent-elles un pays ?</td><td class="mono">3 MINUTES AVEC</td><td>La cuillère de soupe, et le sondage de 1936 qui s'est trompé avec 2 millions de réponses.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">11</td><td>« Statistiquement significatif »</td><td class="mono">REACT</td><td>Facebook a manipulé 700 000 fils : un mot sur mille.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">12</td><td>Comment sait-on qu'une politique a marché ?</td><td class="mono">3 MINUTES AVEC</td><td>Le rhume de sept jours, les loyers parisiens, les villages tirés au sort.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">13</td><td>Pourquoi les gens qui font X vont-ils mieux ?</td><td class="mono">REACT</td><td>Les avions criblés de balles qui sont rentrés.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">14</td><td>Les prix d'avant étaient-ils plus bas ?</td><td class="mono">LE CHIFFRE</td><td>Avatar n'est pas le plus gros succès du cinéma : en dollars d'aujourd'hui, c'est un film de 1939.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">15</td><td>Une étude dit blanc, une autre noir</td><td class="mono">L'ÉTUDE</td><td>Cent études refaites, une sur trois a tenu.</td><td class="gris">scriptée</td></tr>
+        <tr><td class="mono">16</td><td>Ce graphique dit-il la vérité ?</td><td class="mono">LE CHIFFRE</td><td>Le même chômage, avec et sans son axe.</td><td class="gris">scriptée</td></tr>
+      </table></div>
+      <p class="gris">« Scriptée » : le texte est écrit et relu, la vidéo n'est pas encore tournée. Sa page apparaîtra ici quand elle sera publiée.</p>
+    </section>
+
+    <section class="theme" id="immigration">
+      <h2><span class="num">2</span>Immigration</h2>
+      <p class="cadre">Que peut-on affirmer avec certitude sur l'immigration en France, et que ne peut-on pas affirmer ?</p>
+      <div class="vide">
+        <p>Aucune vidéo publiée pour l'instant. Premières questions prévues : migrant, immigré, étranger, réfugié, est-ce la même chose ? Combien de personnes immigrent en France ? L'immigration coûte-t-elle ou rapporte-t-elle aux finances publiques ?</p>
+      </div>
+    </section>
+
+    <section class="theme" id="dette-publique">
+      <h2><span class="num">3</span>Dette publique</h2>
+      <p class="cadre">La dette publique est-elle un vrai problème, et pour qui ?</p>
+      <div class="vide">
+        <p>Aucune vidéo publiée pour l'instant. Premières questions prévues : c'est quoi, la dette publique ? À qui la France doit-elle de l'argent ? « Chaque bébé naît avec X euros de dette » : sur qui pèse la dette, vraiment ?</p>
+      </div>
+    </section>
+
+    <section class="theme" id="corruption">
+      <h2><span class="num">4</span>Corruption</h2>
+      <p class="cadre">Pourquoi la corruption freine-t-elle l'économie, et qu'est-ce qui marche contre elle ?</p>
+      <div class="vide">
+        <p>Aucune vidéo publiée pour l'instant. Premières questions prévues : comment mesure-t-on quelque chose de caché ? Pourquoi la corruption freine-t-elle l'économie ? Et en France ?</p>
+      </div>
+    </section>
+
+    <section class="theme" id="violences">
+      <h2><span class="num">5</span>Violences sexistes et sexuelles</h2>
+      <p class="cadre">Que sait-on de ce qui réduit les violences faites aux femmes et aux enfants, et de ce que ces violences coûtent ?</p>
+      <div class="vide">
+        <p>Aucune vidéo publiée pour l'instant. Premières questions prévues : combien coûtent les violences faites aux femmes et aux enfants ? Plus de plaintes, est-ce plus de violences ? Qu'est-ce qui a fonctionné ?</p>
+      </div>
+    </section>
+
+    <section class="theme" id="logement">
+      <h2><span class="num">6</span>Logement</h2>
+      <p class="cadre">La crise du logement est-elle un problème d'offre ou de demande, et quelles solutions ont été évaluées ?</p>
+      <div class="vide">
+        <p>Aucune vidéo publiée pour l'instant. Premières questions prévues : y a-t-il une crise du logement ? L'encadrement des loyers, ça marche ? Les locations touristiques font-elles monter les loyers ?</p>
+      </div>
+    </section>
+
+    <section class="theme" id="education">
+      <h2><span class="num">7</span>Éducation</h2>
+      <p class="cadre">Parmi les mesures dont on parle à l'école, lesquelles ont fait leurs preuves ?</p>
+      <div class="vide">
+        <p>Aucune vidéo publiée pour l'instant. Premières questions prévues : moins d'élèves par classe, de meilleurs résultats ? L'uniforme à l'école change-t-il quelque chose ? Le redoublement aide-t-il les élèves ?</p>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="vue-date" hidden>
+    <h2 id="par-date"><span class="num">·</span>Par date de publication</h2>
+    <p class="gris">De la plus récente à la plus ancienne. Les pilotes portent la date de leur mise en ligne sur ce site.</p>
+    <div class="cartes" id="cartes-date"></div>
+  </div>
 
 </div></main>
 
@@ -91,5 +168,6 @@
   <p>Une erreur dans une vidéo ? <a href="../corrections.html">Signalez-la</a>. Vous êtes chercheur ? <a href="../a-propos.html#contribuer">Contribuez</a>.</p>
   <p class="meta">Site de coulisses · version de travail · octobre 2026</p>
 </div></footer>
+<script src="../site.js"></script>
 </body>
 </html>

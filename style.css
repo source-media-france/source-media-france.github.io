@@ -296,3 +296,76 @@ img { max-width: 100%; }
   body { font-size: 11pt; }
   a { text-decoration: none; }
 }
+
+/* ---------- Menu déroulant « Vidéos » ---------- */
+
+details.menu { position: relative; }
+details.menu summary {
+  list-style: none;
+  cursor: pointer;
+  color: var(--blanc);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 1px;
+  user-select: none;
+}
+details.menu summary::-webkit-details-marker { display: none; }
+details.menu summary::after { content: " ▾"; font-size: 0.8em; color: var(--jaune); }
+details.menu summary:hover, details.menu[open] summary { border-bottom-color: var(--jaune); }
+details.menu summary[aria-current="page"] { border-bottom-color: var(--jaune); }
+.menu-liste {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 0;
+  min-width: 17rem;
+  background: var(--encre);
+  border-top: 3px solid var(--jaune);
+  padding: 0.5rem 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+}
+.menu-liste a {
+  display: block;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+  color: var(--blanc);
+  border-bottom: 0;
+  white-space: nowrap;
+}
+.menu-liste a:hover { background: var(--jaune); color: var(--encre); }
+.menu-liste .menu-titre {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: #BDBDBD;
+  padding: 0.6rem 1rem 0.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.menu-liste .menu-sep { border-top: 1px solid #333; margin: 0.3rem 0; }
+@media (max-width: 699px) {
+  .entete .wrap { flex-direction: column; align-items: flex-start; }
+  details.menu { position: static; width: 100%; }
+  .menu-liste { position: static; min-width: 0; margin: 0.4rem 0 0.3rem; }
+  .menu-liste a { white-space: normal; }
+}
+
+/* ---------- Page des vidéos : par thème / par date ---------- */
+
+.vues { display: flex; gap: 0.5rem; margin: 1.2rem 0 0.4rem; }
+.vues button {
+  font: inherit;
+  font-weight: 700;
+  background: var(--blanc);
+  color: var(--encre);
+  border: 1.5px solid var(--encre);
+  padding: 0.35em 0.9em;
+  cursor: pointer;
+}
+.vues button[aria-pressed="true"] { background: var(--encre); color: var(--blanc); }
+.vues button:hover { background: var(--jaune); color: var(--encre); }
+
+.theme { margin-top: 2.4rem; padding-top: 0.4rem; }
+.theme .cadre { font-family: var(--serif); font-style: italic; font-size: 1.1rem; color: var(--gris); margin-bottom: 0.8rem; }
+.theme .vide { background: var(--papier); padding: 0.8rem 1rem; color: var(--gris); }
+.theme .vide p:last-child { margin-bottom: 0; }
+@media (max-width: 699px) { details.menu summary { display: inline-block; } }
