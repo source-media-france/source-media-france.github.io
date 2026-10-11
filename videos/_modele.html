@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<!--
+  GABARIT D'UNE PAGE DE VIDÉO.
+  1. Copier ce fichier sous un nom court en minuscules sans accent : videos/mon-sujet.html
+  2. Remplacer tout ce qui est entre [[ ]].
+  3. Supprimer les sections qui ne servent pas (par exemple « Les données » s'il n'y a aucun graphique).
+  4. Ajouter la vidéo dans videos/index.html (une carte) et, si c'est une des trois dernières, dans index.html.
+  5. Si la vidéo explique une notion nouvelle, l'ajouter dans notions.html.
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[[Titre de la vidéo]] · SOURCE ?</title>
+<meta name="description" content="[[La question, puis la réponse en une phrase.]] Transcription, sources, données et relecture de la vidéo.">
+<link rel="icon" href="../assets/logo/logo-jaune.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+3:wght@400;700&family=Source+Serif+4:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<header class="entete"><div class="wrap">
+  <a class="logo" href="../index.html"><span class="c">[</span>SOURCE<span class="q">?</span><span class="c">]</span></a>
+  <nav class="nav" aria-label="Navigation">
+    <a href="index.html" aria-current="page">Vidéos</a>
+    <a href="../notions.html">Notions</a>
+    <a href="../methode.html">Méthode</a>
+    <a href="../a-propos.html">À propos</a>
+  </nav>
+</div></header>
+
+<section class="titre"><div class="wrap">
+  <p class="sur">[[Dossier · épisode N]] · [[FORMAT]] · [[durée]]</p>
+  <h1>[[Titre de la vidéo]]</h1>
+  <p class="sous">« [[L'affirmation ou la question de départ, telle qu'elle circule.]] »</p>
+</div></section>
+
+<main id="contenu" class="contenu"><div class="wrap">
+
+  <p><span class="statut">publiée le [[jour mois année]]</span></p>
+
+  <p>Voir la vidéo : <a href="[[lien TikTok]]">TikTok</a> · <a href="[[lien Instagram]]">Instagram</a></p>
+
+  <h2><span class="num">1</span>En une phrase</h2>
+
+  <table class="fiche">
+    <tr><th>La question</th><td>[[La question précise.]]</td></tr>
+    <tr><th>La réponse</th><td>[[La réponse en une ou deux phrases.]]</td></tr>
+    <tr><th>Avec</th><td><span class="cartouche">[[Prénom Nom · discipline]]</span></td></tr>
+    <tr><th>Source principale</th><td><span class="crochet long">[[Auteur, année, revue ou organisme]]</span></td></tr>
+    <tr><th>La limite</th><td>[[Ce que la vidéo ne permet pas de conclure.]]</td></tr>
+    <tr><th>Notion</th><td><a href="../notions.html#[[ancre]]">[[Nom de la notion]]</a></td></tr>
+  </table>
+
+  <h2><span class="num">2</span>La transcription</h2>
+
+  <p class="gris">Le texte dit dans la vidéo, mot pour mot, avec le moment et ce qui est à l'écran.</p>
+
+  <div class="transcription">
+    <div class="plan"><span class="temps">0-5 s</span><span class="ecran">écran : l'affirmation</span><p class="voix">[[Phrase d'accroche.]]</p></div>
+    <div class="plan"><span class="temps">5-6 s</span><span class="ecran">carton SOURCE ?</span><p class="voix gris">(son du carton)</p></div>
+    <div class="plan"><span class="temps">[[6-20 s]]</span><span class="ecran">[[chercheur, crochets et cartouche]]</span><p class="voix">[[Texte.]]</p></div>
+    <div class="plan"><span class="temps">[[20-40 s]]</span><span class="ecran">[[écran : …]]</span><p class="voix">[[Texte.]]</p></div>
+    <div class="plan"><span class="temps">[[40-60 s]]</span><span class="ecran">écran de fin</span><p class="voix">[[Conclusion.]]</p></div>
+  </div>
+
+  <p><strong>La légende publiée avec la vidéo.</strong> [[La question. La réponse. Avec : Prénom Nom, discipline. Source : auteurs, année, titre.]]</p>
+
+  <h2><span class="num">3</span>Ce qu'elle montre, ce qu'elle ne montre pas</h2>
+
+  <div class="montre">
+    <div class="oui">
+      <span class="etiquette">Elle montre</span>
+      <ul>
+        <li>[[…]]</li>
+        <li>[[…]]</li>
+      </ul>
+    </div>
+    <div class="non">
+      <span class="etiquette">Elle ne montre pas</span>
+      <ul>
+        <li>[[…]]</li>
+        <li>[[…]]</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2><span class="num">4</span>Les sources</h2>
+
+  <ol>
+    <li><strong>[[Auteur(s)]]</strong>, « [[Titre]] », <em>[[Revue ou organisme]]</em>, [[année]]. [[Une phrase : ce que la source apporte, population, période, méthode.]] <a href="[[lien ou DOI]]">[[lien]]</a></li>
+    <li>[[…]]</li>
+  </ol>
+
+  <h2><span class="num">5</span>Les données et les calculs</h2>
+
+  <p>[[Pour chaque chiffre dit ou affiché : sa valeur, sa source, la population, l'année, et le calcul s'il y en a un. Pour chaque graphique fait par nous : les données et la façon dont il a été construit. Supprimer cette section s'il n'y a ni calcul ni graphique.]]</p>
+
+  <div class="table-scroll"><table>
+    <tr><th>Chiffre</th><th>Valeur dans la vidéo</th><th>Source et calcul</th></tr>
+    <tr><td>[[…]]</td><td class="mono">[[…]]</td><td>[[…]]</td></tr>
+  </table></div>
+
+  <h2><span class="num">6</span>Les écrans</h2>
+
+  <p class="gris">Les images posées sur la vidéo, générées à partir de la charte graphique. Format vertical 1080 × 1920.</p>
+
+  <div class="ecrans">
+    <figure><img src="../assets/ecrans/[[dossier]]/01-affirmation.png" alt="[[Description de l'image]]" loading="lazy"><figcaption>01 · l'affirmation</figcaption></figure>
+    <figure><img src="../assets/ecrans/carton.png" alt="Carton : le logo SOURCE ? noir sur fond jaune" loading="lazy"><figcaption>carton</figcaption></figure>
+    <figure><img src="../assets/ecrans/[[dossier]]/06-fin.png" alt="[[Description de l'image]]" loading="lazy"><figcaption>06 · fin</figcaption></figure>
+  </div>
+
+  <h2><span class="num">7</span>Relecture et validation</h2>
+
+  <div class="table-scroll"><table>
+    <tr><th>Étape</th><th>Qui</th><th>Statut</th></tr>
+    <tr><td>Écriture du script</td><td>[[Prénom Nom, et équipe]]</td><td>fait</td></tr>
+    <tr><td>Relecture scientifique</td><td>[[Prénom Nom · discipline]]</td><td>fait</td></tr>
+    <tr><td>Relecture éditoriale</td><td>[[Prénom Nom]]</td><td>fait</td></tr>
+    <tr><td>Validation technique (sous-titres, habillage, sources à l'écran)</td><td>[[Prénom Nom]]</td><td>fait</td></tr>
+    <tr><td>Accord du chercheur sur la version montée</td><td>[[Prénom Nom]]</td><td>fait</td></tr>
+  </table></div>
+
+  <h2><span class="num">8</span>Corrections</h2>
+
+  <p>Aucune correction pour l'instant. Une erreur ? <a href="../corrections.html">Signalez-la</a>.</p>
+
+  <!-- Quand il y a une correction, remplacer le paragraphe ci-dessus par :
+  <div class="table-scroll"><table>
+    <tr><th>Date</th><th>Ce qui était faux</th><th>Ce qui est juste</th><th>Correction</th></tr>
+    <tr><td class="mono">[[jj/mm/aaaa]]</td><td>[[…]]</td><td>[[…]]</td><td>[[description modifiée · commentaire épinglé · vidéo de correction, avec lien]]</td></tr>
+  </table></div>
+  et ajouter la même ligne dans corrections.html. -->
+
+</div></main>
+
+<footer class="pied"><div class="wrap">
+  <p class="signature"><span class="surligne">T'as la source ? On va la chercher.</span></p>
+  <p>SOURCE ? est un collectif de chercheurs. Toutes les contributions sont bénévoles ; le média n'a ni financement ni partenaire.</p>
+  <p>Sur les réseaux : <span class="mono">@source.media.france</span> (TikTok, Instagram).</p>
+  <p>Une erreur dans une vidéo ? <a href="../corrections.html">Signalez-la</a>. Vous êtes chercheur ? <a href="../a-propos.html#contribuer">Contribuez</a>.</p>
+  <p class="meta">Site de coulisses · version de travail · octobre 2026</p>
+</div></footer>
+</body>
+</html>
