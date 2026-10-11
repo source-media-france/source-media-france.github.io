@@ -369,3 +369,28 @@ details.menu summary[aria-current="page"] { border-bottom-color: var(--jaune); }
 .theme .vide { background: var(--papier); padding: 0.8rem 1rem; color: var(--gris); }
 .theme .vide p:last-child { margin-bottom: 0; }
 @media (max-width: 699px) { details.menu summary { display: inline-block; } }
+
+/* ---------- Graphiques et schémas dans les pages de vidéos ---------- */
+
+.chapeau { font-size: 1.15rem; line-height: 1.5; }
+.figure { margin: 1.4rem 0 2rem; }
+.figure svg { width: 100%; height: auto; display: block; background: var(--papier); }
+.figure svg text { font-family: var(--sans); fill: var(--encre); }
+.figure svg .mono { font-family: var(--mono); }
+.figure svg .gris { fill: var(--gris); }
+.figure svg .blanc { fill: var(--blanc); }
+.figure svg .gras { font-weight: 700; }
+.figure figcaption { font-size: 0.95rem; margin-top: 0.6rem; }
+.figure figcaption .src { font-family: var(--mono); font-size: 0.78rem; color: var(--gris); display: block; margin-top: 0.2rem; }
+.figures-3 { display: grid; gap: 1.2rem; margin: 1.4rem 0 1.2rem; }
+.figures-3 .figure { margin: 0; display: grid; gap: 0.6rem; align-items: center; }
+.figures-3 .figure svg { max-width: 360px; }
+@media (min-width: 620px) { .figures-3 .figure { grid-template-columns: 300px 1fr; } .figures-3 .figure figcaption { margin-top: 0; } }
+
+.tuiles { display: grid; gap: 1rem; margin: 1.2rem 0 1.8rem; }
+@media (min-width: 560px) { .tuiles { grid-template-columns: 1fr 1fr; } }
+.tuile { border: 1.5px solid var(--encre); padding: 1rem 1.1rem 1.1rem; }
+.tuile.jaune { background: var(--jaune); }
+.tuile .chiffre { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 700; line-height: 1; margin-bottom: 0.4rem; }
+.tuile .quoi { font-weight: 700; margin-bottom: 0.2rem; }
+.tuile p { margin: 0; }
