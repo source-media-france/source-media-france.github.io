@@ -1,5 +1,7 @@
 # SOURCE ? — le site de coulisses
 
+> **Débutant sur GitHub ? Commencez par [TUTO.md](TUTO.md)** : comment corriger, compléter et ajouter des pages, pas à pas, avec des morceaux de code à copier.
+
 Le site public qui complète les vidéos de SOURCE ? : pour chaque vidéo, le résumé, l'explication en images avec ses graphiques, les sources complètes, ce qu'elle montre et ne montre pas, les données et les calculs des graphiques, les noms des relecteurs, les corrections. Plus une page « Notions », la méthode, et qui nous sommes.
 
 C'est le « site de coulisses » décidé lors de la première réunion du comité (point 3 de l'ordre du jour, option C : sources, relecteurs, données et code, onglet notions). Le comité avait aussi évoqué la transcription ; Hanna a choisi un résumé et une explication en images à la place.
