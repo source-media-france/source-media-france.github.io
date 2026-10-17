@@ -43,30 +43,35 @@ Dans la page de la vidéo, section « Corrections », remplacer « Aucune correc
 
 ## Publier sur GitHub Pages
 
-Une seule fois :
+### La première fois, avec GitHub Desktop (sans terminal)
 
-1. Créer un dépôt sur github.com (par exemple `source-coulisses`), public, vide (sans README).
-2. Dans ce dossier, envoyer le site :
+1. **Un compte GitHub.** Sur github.com, créer un compte gratuit si besoin. Conseillé : créer aussi une **organisation** gratuite au nom du média (icône + en haut à droite, « New organization », offre Free), par exemple `source-media-france`, et y inviter les cofondateurs. Le site appartient alors au média et non à une personne.
+2. **GitHub Desktop.** Installer l'application gratuite depuis desktop.github.com, l'ouvrir et se connecter avec son compte GitHub.
+3. **Ajouter le site.** Menu File, puis « Add Local Repository… », puis choisir ce dossier `site` (dans Dropbox, dossier `SOURCE?`). L'historique des modifications apparaît.
+4. **Publier.** Cliquer sur « Publish repository ». Nom : `source-coulisses`. **Décocher** « Keep this code private » (GitHub Pages gratuit exige un dépôt public). Dans « Organization », choisir l'organisation si elle existe. Valider.
+5. **Activer le site.** Sur github.com, ouvrir le dépôt, puis Settings, puis Pages. Dans « Build and deployment » : Source « Deploy from a branch », Branch `main`, dossier `/ (root)`, Save.
+6. **Attendre une ou deux minutes.** L'adresse s'affiche en haut de la page Pages, par exemple `https://source-media-france.github.io/source-coulisses/`.
 
-   ```bash
-   git remote add origin https://github.com/VOTRE-COMPTE/source-coulisses.git
-   git push -u origin main
-   ```
+Pour une adresse plus courte, nommer le dépôt exactement `source-media-france.github.io` (le nom de l'organisation suivi de `.github.io`) : le site sera alors à `https://source-media-france.github.io/`.
 
-3. Sur GitHub : Settings → Pages → Build and deployment → Source : « Deploy from a branch » → Branch : `main`, dossier `/ (root)` → Save.
-4. Après une ou deux minutes, le site est en ligne à `https://VOTRE-COMPTE.github.io/source-coulisses/`.
+### Ensuite, à chaque modification
 
-Ensuite, à chaque modification :
+Ouvrir GitHub Desktop : les fichiers modifiés apparaissent à gauche. Écrire un résumé en bas à gauche, cliquer sur « Commit to main », puis sur « Push origin » en haut. Si les modifications ont déjà été validées (par exemple par Claude), seul « Push origin » est à cliquer. Le site se met à jour tout seul en une minute.
+
+### La même chose en ligne de commande
 
 ```bash
-git add -A
-git commit -m "Ajoute la vidéo sur les sondages"
-git push
+git remote add origin https://github.com/NOM-DU-COMPTE/source-coulisses.git
+git push -u origin main
 ```
 
-Le site se met à jour tout seul en une minute. Les liens entre pages sont relatifs : le site fonctionne quel que soit le nom du dépôt ou du domaine.
+GitHub demande alors un jeton d'accès personnel à la place du mot de passe (Settings, Developer settings, Personal access tokens). Puis, à chaque modification : `git add -A`, `git commit -m "…"`, `git push`.
 
-Un nom de domaine propre (par exemple `source-media.fr`) pourra être ajouté plus tard dans Settings → Pages → Custom domain, sans rien changer aux pages.
+### Bon à savoir
+
+- Tout ce qui est dans ce dossier devient public, y compris les pages des pilotes et leurs chiffres marqués « à vérifier ». Le fichier `_modele.html` et ce README sont aussi visibles sur GitHub.
+- Les liens entre pages sont relatifs : le site fonctionne quel que soit le nom du dépôt ou du domaine.
+- Un nom de domaine propre (par exemple `source-media.fr`) pourra être ajouté plus tard dans Settings, Pages, Custom domain, sans rien changer aux pages.
 
 ## Ce qui reste à décider ou à compléter
 
