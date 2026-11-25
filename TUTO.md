@@ -176,7 +176,7 @@ C'est la recette la plus longue. Elle a trois étapes : créer la page, l'ajoute
 
 ```html
 <article class="carte">
-  <span class="format">[[épisode 2]] · sortie le [[mardi 8 décembre]] · [[60 s]]</span>
+  <span class="format">[[épisode 2]] · sortie le [[mardi 8 décembre]]</span>
   <h3><a href="[[parachute-preuves.html]]">[[Titre de la vidéo]]</a></h3>
   <p>[[Ce que la vidéo explique, en une phrase. Pas de citation.]]</p>
   <p class="avec">Avec <strong>[[Prénom Nom]]</strong><span class="qui-titre">[[titre · établissement]]</span></p>
@@ -185,7 +185,7 @@ C'est la recette la plus longue. Elle a trois étapes : créer la page, l'ajoute
 
 Si la vidéo était déjà annoncée sans page (carte en pointillés, classe `a-venir`), remplacer cette carte-là : retirer ` a-venir`, mettre le titre en lien, et enlever `class="gris"` du paragraphe.
 
-**Étape 3 : l'ajouter au calendrier.** Ouvrir `videos/calendrier.html`. Sous le bon jour (un titre `<h3 class="jour">`), coller la même carte en commençant la ligne de format par le nom du thème et sans la date : `<span class="format">[[Immigration]] · [[épisode 2]]</span>`. S'il n'y a pas encore de titre pour ce jour, copier un bloc existant, du `<h3 class="jour">` jusqu'au `</div>` qui ferme ses cartes. Les vidéos sans date vont dans la section « Prévues, date à fixer ».
+**Étape 3 : l'ajouter au calendrier.** Ouvrir `videos/calendrier.html`. Sous le bon jour (un titre `<h3 class="jour">`), coller la même carte en commençant la ligne de format par le nom du thème et sans la date : `<span class="format">[[Immigration]] · [[épisode 2]]</span>`. S'il n'y a pas encore de titre pour ce jour, copier un bloc existant, du `<h3 class="jour">` jusqu'au `</div>` qui ferme ses cartes. Les vidéos sans date vont dans la section « Bientôt ».
 
 **Étape 4 : l'accueil.** Pendant le lancement, `index.html` montre les vidéos du 1er décembre. Ensuite, remplacer ces cartes par les dernières sorties (cinq au plus), en ajoutant `videos/` devant le nom de la page dans le lien.
 
@@ -227,7 +227,7 @@ Les bases de données des organismes (Insee, Santé publique France…) ne se co
 
 Depuis une page qui n'est pas dans `videos/` (l'accueil, les notions…), écrire `assets/…` au lieu de `../assets/…`.
 
-Les graphiques des pilotes (barres, grille de cent personnes, schémas à flèches) sont dessinés en code dans la page. Pour en faire un nouveau, demander à Claude.
+Les graphiques des pages de vidéos (barres, cercles, schémas à flèches) sont dessinés en code dans la page. Pour en faire un nouveau, demander à Claude.
 
 ### 2.9 Ajouter une notion
 

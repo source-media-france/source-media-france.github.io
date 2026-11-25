@@ -10,13 +10,13 @@ C'est le « site de coulisses » décidé lors de la première réunion du comit
 
 ```
 index.html                 Accueil : ce qu'est SOURCE ?, le lancement, les trois questions
-videos/calendrier.html     Le calendrier des sorties (vidéos datées, prévues, pilotes)
+videos/calendrier.html     Le calendrier des sorties (vidéos datées, puis « Bientôt »)
 videos/index.html          Toutes les séries
 videos/<thème>.html        Une page par série : le-media, comprendre-les-chiffres, immigration…
 videos/<vidéo>.html        Une page par vidéo
 videos/_modele.html        Le gabarit à copier pour une nouvelle vidéo
 a-propos.html              Notre mission, ce que SOURCE ? n'est pas, nos engagements, indépendance
-equipe.html                Qui sommes-nous ? Les cinq cofondateurs
+equipe.html                Qui sommes-nous ? Les cinq membres du comité directeur
 contribuer.html            Proposer un script (formulaire envoyé par e-mail via FormSubmit)
 contact.html               E-mail et réseaux
 merci.html                 Page affichée après l'envoi du formulaire
@@ -36,11 +36,11 @@ Aucun outil à installer, aucune étape de construction : ce sont des pages HTML
 
 1. Copier `videos/_modele.html` sous un nom court, en minuscules, sans accent ni espace : `videos/mon-sujet.html`.
 2. Remplacer tout ce qui est entre `[[ ]]`. Le résumé et la légende viennent du document de script ; les sources aussi ; la relecture, du tableau de suivi. Pas de transcription mot pour mot : la page est un petit article, pas le script.
-3. Écrire la section « L'explication, en images » comme un petit article : un chapeau, un ou deux paragraphes, et au moins un graphique. Un graphique se dessine en SVG directement dans la page (voir les trois pilotes : barres, grille de cent personnes, schémas à flèches), ou se met en image. Règles de la charte : un graphique montre une seule chose, fond papier, traits noirs, le jaune pour le seul élément dont on parle, la source entre crochets sous le graphique, jamais de rouge ni de vert.
+3. Écrire la section « L'explication, en images » comme un petit article : un chapeau, un ou deux paragraphes, et au moins un graphique. Un graphique se dessine en SVG directement dans la page (voir les pages des vidéos : barres, cercles, schémas à flèches), ou se met en image. Règles de la charte : un graphique montre une seule chose, fond papier, traits noirs, le jaune pour le seul élément dont on parle, la source entre crochets sous le graphique, jamais de rouge ni de vert.
 4. Dans `videos/index.html`, ajouter une carte dans la section du thème (copier-coller une carte existante) avec la date de publication dans `data-date="AAAA-MM-JJ"` : c'est elle qui sert au classement par date. Si le thème n'a pas encore de carte, remplacer son encadré « Aucune vidéo » par un bloc `<div class="cartes">`. Si la vidéo est une des trois dernières, l'ajouter aussi dans `index.html` et retirer la plus ancienne.
 4 bis. Mettre les calculs de la vidéo dans un fichier `donnees/nom-de-la-video.csv` (une ligne par chiffre : valeur, champ, source, lien, statut) et le lier depuis la section « Nos calculs, à télécharger ». Les bases de données d'origine ne sont pas copiées : on met le lien vers l'organisme ou le fichier qu'il publie.
 5. Si la vidéo explique une notion nouvelle, ajouter une entrée dans `notions.html` (un titre `h2` avec un `id`, une définition, un exemple, le lien vers la vidéo), et une ligne dans le sommaire en haut de la page.
-6. Quand la vidéo est publiée : remplacer le badge « pilote » par « publiée le … » et ajouter les liens TikTok et Instagram.
+6. Quand la vidéo est publiée : remplacer le badge « à paraître » par « publiée le … » et ajouter les liens vers la vidéo (recette 2.6 du tuto).
 
 ## Ajouter un thème
 
@@ -78,7 +78,7 @@ GitHub demande alors un jeton d'accès personnel à la place du mot de passe (Se
 
 ### Bon à savoir
 
-- Tout ce qui est dans ce dossier devient public, y compris les pages des pilotes et leurs chiffres marqués « à vérifier ». Le fichier `_modele.html` et ce README sont aussi visibles sur GitHub.
+- Tout ce qui est dans ce dossier devient public, y compris les pages des vidéos pas encore sorties et leurs chiffres marqués « à vérifier ». Le fichier `_modele.html` et ce README sont aussi visibles sur GitHub.
 - Les liens entre pages sont relatifs : le site fonctionne quel que soit le nom du dépôt ou du domaine.
 - Un nom de domaine propre (par exemple `source-media.fr`) pourra être ajouté plus tard dans Settings, Pages, Custom domain, sans rien changer aux pages.
 
@@ -90,9 +90,13 @@ Ces points sont marqués dans les pages par un encadré gris « EN DISCUSSION »
 - **La règle de relecture** : un second chercheur quand le sujet le justifie (texte actuel), ou deux pairs extérieurs pour chaque vidéo (point 3). `methode.html`, section 7.
 - **Les corrections graduées** : coquille en description, vidéo pour une erreur de fond (point 2). `methode.html` section 10 et `corrections.html`.
 - **L'adresse de courriel** de contact. `a-propos.html`, section 8, et `corrections.html`.
-- **Les chiffres `[à vérifier]`** des trois pilotes. Les liens vers les sources sont en place (Insee Première n° 2020 d'octobre 2024, communiqué CIRC n° 240 et *Lancet Oncology* 2015, Messerli 2012 *NEJM*). Les salaires moyen et médian ont été vérifiés sur insee.fr le 11 octobre 2026 ; reste le « deux sur trois », le « 18 % par 50 g », le risque de base de cancer colorectal, et le r = 0,79.
-- **Une correction dans le script et l'écran de fin de la vidéo 1** : la publication Insee est d'octobre 2024, pas de 2025 (`pilotes.tex` et `make-gabarits.py`).
-- **Les noms des relecteurs** des trois pilotes, section « Relecture et validation » de chaque page.
+- **Les vidéos d'Andrea sur la corruption** : pas encore de script, donc pas de page.
+- **La vidéo sur la taille des classes** : deux phrases du script à corriger (encadré sur sa page).
+- **Les sources de Marin** : à confirmer, et la source des graphiques de sa deuxième vidéo.
+- **Les noms des relecteurs** de chaque vidéo, section « Relecture et validation ».
+- **Les photos et les liens** des membres, sur `equipe.html`.
+- **Le formulaire Contribuer** : à activer par le premier e-mail de FormSubmit ; limite de mots provisoire (300).
+- **Les deux pilotes** (risque relatif, corrélation) ont été retirés du site le 26 novembre, pour une publication plus tard : ils sont dans l'historique git.
 - **Les plateformes** : les pages mentionnent TikTok et Instagram ; ajouter YouTube Shorts, X ou LinkedIn si le comité les retient (point 2).
 
 ## La charte graphique dans le site

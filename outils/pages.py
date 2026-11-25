@@ -18,13 +18,13 @@ EXPL = {
 GRIS_C = ' class="gris"'
 MONO_C = ' class="mono"'
 TITRE_IMMIG = "Insee, 2026, L'essentiel sur les immigrés et les étrangers"
-base = open(os.path.join(SITE, "videos/risque-relatif-absolu.html"), encoding="utf-8").read()
+base = open(os.path.join(SITE, "videos/presentation-du-media.html"), encoding="utf-8").read()
 HEAD = base[:base.index('<section class="titre">')]
 FOOT = base[base.index('<footer class="pied">'):]
 
-HB = '<span class="cartouche">Hanna Bony · doctorante en économie · Université Gustave Eiffel</span>'
-MT = '<span class="cartouche">Marine de Talancé · enseignante-chercheuse en économie · Université Gustave Eiffel</span>'
-MF = '<span class="cartouche">Marin Ferry · enseignant-chercheur en économie · Université Gustave Eiffel</span>'
+HB = '<span class="cartouche">Hanna Bony · Doctorante en économie · Université Gustave Eiffel</span>'
+MT = '<span class="cartouche">Marine de Talancé · Enseignante-chercheuse en économie · Université Gustave Eiffel</span>'
+MF = '<span class="cartouche">Marin Ferry · Enseignant-chercheur en économie · Université Gustave Eiffel</span>'
 
 def a(cle, texte=None):
     url = L[cle]
@@ -116,7 +116,7 @@ etapes = svg("p1", "Trois étapes : un chiffre qui circule, on lit la recherche,
 
 page("presentation-du-media.html", "Présentation du média",
      "Qu'est-ce que SOURCE ? Des chercheurs qui prennent un chiffre qui circule, lisent ce que la recherche en dit, et le racontent en une minute avec la source à l'écran.",
-     "Le média · à paraître le mardi 1<sup>er</sup> décembre · 45 s",
+     "Le média · à paraître le mardi 1<sup>er</sup> décembre",
      "Huit virgule deux pour cent de chômage. Cinquante-quatre milliards au budget. Deux cent quatre-vingt-cinq mille victimes. Ces chiffres, vous les avez vus passer. Mais ils viennent d'où ?",
      "à paraître le mardi 1<sup>er</sup> décembre 2026, 17 h",
      [("La question", "Qu'est-ce que SOURCE ?, et comment ça marche ?"),
@@ -371,7 +371,7 @@ cp = barres_h("c2", "CP dans les écoles les plus défavorisées : 22 élèves p
 
 page("taille-des-classes.html", "Moins d'élèves par classe, ça marche ?",
      "Réduire la taille des classes aide les plus jeunes élèves ; au lycée, personne ne l'a mesuré. Résumé, graphiques et sources de la vidéo de Hanna Bony : Tennessee, et les CP dédoublés en France.",
-     "Éducation · à paraître le mardi 1<sup>er</sup> décembre · 70 s",
+     "Éducation · à paraître le mardi 1<sup>er</sup> décembre",
      "Au lycée général, en France, il y a en moyenne trente élèves par classe. En CP dans les quartiers les plus pauvres : treize. Est-ce que moins d'élèves, ça donne de meilleurs résultats ?",
      "à paraître le mardi 1<sup>er</sup> décembre 2026 · carrousel le samedi 5 décembre",
      [("La question", "Moins d'élèves par classe, est-ce que ça donne de meilleurs résultats ?"),
@@ -456,7 +456,7 @@ salaires = barres_h("m1", "Salaire net mensuel en équivalent temps plein, secte
 
 page("moyenne-mediane.html", "Le Français « moyen » existe-t-il ?",
      "Le salaire moyen dans le privé est de 2 797 euros net, le salaire médian de 2 238 euros : la moyenne n'est pas le milieu. Résumé, graphique et sources de la vidéo de Hanna Bony.",
-     "Comprendre les chiffres · à paraître le dimanche 6 décembre · 45 s",
+     "Comprendre les chiffres · à paraître le dimanche 6 décembre",
      "L'Insee vient de publier le salaire moyen dans le privé : deux mille sept cent quatre-vingt-dix-sept euros net par mois. Vous gagnez moins ? Vous êtes comme la majorité des salariés.",
      "à paraître le dimanche 6 décembre 2026 · carrousel le lundi 7 décembre",
      [("La question", "Quand on dit « salaire moyen », est-ce que la moitié des gens gagnent moins ?"),

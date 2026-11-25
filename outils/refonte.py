@@ -13,15 +13,15 @@ LINKEDIN = "https://www.linkedin.com/company/source-media-france/"
 
 UGE = "Université Gustave Eiffel"
 PERS = {
-    "HB": ("Hanna Bony", "doctorante en économie"),
-    "MC": ("Melchior Clerc", ""),
-    "MT": ("Marine de Talancé", "enseignante-chercheuse en économie"),
-    "MF": ("Marin Ferry", "enseignant-chercheur en économie"),
-    "AR": ("Andrea Rouchon", "doctorant en économie"),
+    "HB": ("Hanna Bony", "Doctorante en économie", UGE),
+    "MC": ("Melchior Clerc", "Doctorant", "CERDI, Université Clermont Auvergne"),
+    "MT": ("Marine de Talancé", "Enseignante-chercheuse en économie", UGE),
+    "MF": ("Marin Ferry", "Enseignant-chercheur en économie", UGE),
+    "AR": ("Andrea Rouchon", "Doctorant en économie", UGE),
 }
 def cartouche(k):
-    nom, titre = PERS[k]
-    return f'<span class="cartouche">{nom} · {titre} · {UGE}</span>' if titre else f'<span class="cartouche">{nom}</span>'
+    nom, titre, etab = PERS[k]
+    return f'<span class="cartouche">{nom} · {titre} · {etab}</span>'
 
 # ------------------------------------------------------------------ thèmes et vidéos
 THEMES = [
@@ -58,10 +58,6 @@ V = [
  dict(t="Les dépenses d'éducation en France", th="education", date="2026-12-14",
       x="Combien la France dépense pour l'école, et ce que la recherche en dit. Page en préparation."),
  # pilotes
- dict(t="18 % en plus de quoi ?", th="comprendre-les-chiffres", pilote=True, page="risque-relatif-absolu.html", a="HB", duree="85 s",
-      x="Ce que veut dire un risque « en plus » de 18 % : la différence entre risque relatif et risque absolu, comptée en personnes."),
- dict(t="Est-ce que l'une cause l'autre ?", th="comprendre-les-chiffres", pilote=True, page="correlation-causalite.html", a="HB", duree="2 min",
-      x="Pourquoi deux choses qui évoluent ensemble ne prouvent pas que l'une cause l'autre : la cause cachée et le sens de la flèche."),
  # date à fixer
  dict(t="Un million, un milliard", th="comprendre-les-chiffres", a="HB", x="Comment comprendre un chiffre en milliards : le diviser par le nombre d'habitants."),
  dict(t="Ce graphique dit-il la vérité ?", th="comprendre-les-chiffres", a="HB", x="Pourquoi il faut regarder d'où part l'échelle d'un graphique avant de regarder les barres."),
@@ -91,14 +87,12 @@ def carte(v, prefix="", montrer_theme=False, montrer_date=True):
     if v.get("ep"): bits.append(f"épisode {v['ep']}")
     if v.get("date"):
         if montrer_date: bits.append("sortie le " + date_long(v["date"]))
-    elif v.get("pilote"): bits.append("pilote, non publié")
-    else: bits.append("date à fixer")
-    if v.get("duree"): bits.append(v["duree"])
+    else: bits.append("bientôt")
     h3 = f'<h3><a href="{prefix}{v["page"]}">{v["t"]}</a></h3>' if v.get("page") else f'<h3>{v["t"]}</h3>'
     p = f'<p>{v["x"]}</p>' if v.get("page") else f'<p class="gris">{v["x"]}</p>'
     if v.get("a"):
-        nom, titre = PERS[v["a"]]
-        sous = f'<span class="qui-titre">{titre} · {UGE}</span>' if titre else ''
+        nom, titre, etab = PERS[v["a"]]
+        sous = f'<span class="qui-titre">{titre} · {etab}</span>'
         avec = f'\n      <p class="avec">Avec <strong>{nom}</strong>{sous}</p>'
     else:
         avec = ""
@@ -160,7 +154,7 @@ def doc(fname, titre, desc, sur, h1, sous, main, cur, sous_voix="nous"):
 <meta name="description" content="{desc}">
 <link rel="icon" href="{p}assets/logo/logo-jaune.png">
 {FONTS}
-<link rel="stylesheet" href="{p}style.css?v=20261125">
+<link rel="stylesheet" href="{p}style.css?v=20261126">
 </head>
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
@@ -182,7 +176,7 @@ def doc(fname, titre, desc, sur, h1, sous, main, cur, sous_voix="nous"):
 </div></main>
 
 {footer(p)}
-<script src="{p}site.js?v=20261125"></script>
+<script src="{p}site.js?v=20261126"></script>
 </body>
 </html>
 '''
@@ -205,17 +199,12 @@ main = f'''  <p>Les dates de sortie des vidéos, de la plus proche à la plus lo
 
 {chr(10).join(blocs)}
 
-  {num(2, "Prévues, date à fixer")}
+  {num(2, "Bientôt")}
 
   <p>Ces vidéos sont écrites ou tournées. Leur date de sortie sera ajoutée ici.</p>
 
 {cartes([v for v in V if not v.get("date") and not v.get("pilote")], montrer_theme=True)}
-
-  {num(3, "Les pilotes")}
-
-  <p>Deux vidéos tournées pour tester le format, avant le lancement. Elles ne sont pas publiées sur les réseaux, mais leurs pages sont complètes.</p>
-
-{cartes([v for v in V if v.get("pilote")], montrer_theme=True)}'''
+'''
 doc("videos/calendrier.html", "Le calendrier des sorties · SOURCE ?",
     "Les dates de sortie des vidéos SOURCE ? à partir du 1er décembre 2026, et les vidéos prévues.",
     "vidéos", "Le calendrier des sorties", "Lancement le mardi 1<sup>er</sup> décembre 2026 : cinq vidéos le premier jour, puis de nouvelles vidéos chaque semaine.", main, "videos")
@@ -308,17 +297,17 @@ doc("a-propos.html", "Notre mission · SOURCE ?", "La mission de SOURCE ?, ce qu
 
 # ------------------------------------------------------------------ 5. Qui sommes-nous ?
 MEMBRES = [
-    ("HB", "Cofondatrice. Elle présente les vidéos « Comprendre les chiffres », publie sur Instagram, TikTok et Facebook, et prépare les vidéos sur l'éducation et les violences conjugales."),
-    ("MC", "Cofondateur, membre du comité directeur."),
-    ("MT", "Cofondatrice. Elle porte la série sur l'immigration."),
-    ("MF", "Cofondateur. Il porte la série sur la dette publique et publie sur LinkedIn."),
-    ("AR", "Cofondateur. Il porte la série sur la corruption et a construit l'espace de travail du collectif."),
+    ("HB", "Membre du comité directeur. Elle présente les vidéos « Comprendre les chiffres », publie sur Instagram, TikTok et Facebook, et prépare les vidéos sur l'éducation et les violences conjugales."),
+    ("MC", "Membre du comité directeur."),
+    ("MT", "Membre du comité directeur. Elle porte la série sur l'immigration."),
+    ("MF", "Membre du comité directeur. Il porte la série sur la dette publique et publie sur LinkedIn."),
+    ("AR", "Membre du comité directeur. Il porte la série sur la corruption et a construit l'espace de travail du collectif."),
 ]
 fiches = []
 for k, role in MEMBRES:
-    nom, titre = PERS[k]
+    nom, titre, etab = PERS[k]
     initiales = "".join(w[0] for w in nom.replace("de ", "").split())
-    t = f"{titre[0].upper()}{titre[1:]} · {UGE}" if titre else '<span class="gris">titre à compléter</span>'
+    t = f"{titre} · {etab}"
     fiches.append(f'''    <article class="membre">
       <!-- Pour mettre une photo : déposer assets/equipe/{nom.lower().replace(" ", "-").replace("é", "e")}.jpg (carrée), puis remplacer la ligne suivante par
            <img class="portrait" src="assets/equipe/{nom.lower().replace(" ", "-").replace("é", "e")}.jpg" alt="{nom}"> -->
@@ -339,7 +328,7 @@ main = f'''  <p>SOURCE ? a été fondé par cinq chercheurs, qui forment son com
   {num(1, "Et les autres chercheurs")}
 
   <p>Le collectif a vocation à s'ouvrir, et à d'autres disciplines que l'économie. Chaque vidéo est écrite par un chercheur ou une chercheuse qui connaît le sujet, et son nom est donné à l'écran, dans la description et sur ce site. Vous voulez proposer un sujet ? <a href="contribuer.html">Contribuez</a>.</p>'''
-doc("equipe.html", "Qui sommes-nous ? · SOURCE ?", "Les cinq cofondateurs de SOURCE ? : Hanna Bony, Melchior Clerc, Marine de Talancé, Marin Ferry et Andrea Rouchon.",
+doc("equipe.html", "Qui sommes-nous ? · SOURCE ?", "Les cinq membres du comité directeur de SOURCE ? : Hanna Bony, Melchior Clerc, Marine de Talancé, Marin Ferry et Andrea Rouchon.",
     "à propos", "Qui sommes-nous ?", "Cinq chercheurs, un comité directeur, et une porte ouverte à tous les autres.", main, "apropos")
 
 # ------------------------------------------------------------------ 6. Contribuer
