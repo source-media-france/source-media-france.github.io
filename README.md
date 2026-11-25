@@ -9,18 +9,25 @@ C'est le « site de coulisses » décidé lors de la première réunion du comit
 ## Ce qu'il y a dedans
 
 ```
-index.html            Accueil : ce qu'est SOURCE ?, les dernières vidéos, les trois questions
-videos/index.html     Toutes les vidéos, et la série « Les bases »
-videos/*.html         Une page par vidéo (trois pilotes pour l'instant)
-videos/_modele.html   Le gabarit à copier pour une nouvelle vidéo
-donnees/              Nos calculs en CSV, un fichier par vidéo, à télécharger depuis sa page
-site.js               Le seul script : menu déroulant, et classement par thème / par date
-notions.html          Les mots qu'on emploie, expliqués une fois
-methode.html          Comment une vidéo est fabriquée, qui vérifie quoi
-a-propos.html         Mission, engagements, comité, indépendance, contribuer, contact
-corrections.html      Toutes les corrections publiées, et comment signaler une erreur
-style.css             La charte graphique en CSS : couleurs, trois polices, crochets
-assets/logo/          Le logo (trois versions)
+index.html                 Accueil : ce qu'est SOURCE ?, le lancement, les trois questions
+videos/calendrier.html     Le calendrier des sorties (vidéos datées, prévues, pilotes)
+videos/index.html          Toutes les séries
+videos/<thème>.html        Une page par série : le-media, comprendre-les-chiffres, immigration…
+videos/<vidéo>.html        Une page par vidéo
+videos/_modele.html        Le gabarit à copier pour une nouvelle vidéo
+a-propos.html              Notre mission, ce que SOURCE ? n'est pas, nos engagements, indépendance
+equipe.html                Qui sommes-nous ? Les cinq cofondateurs
+contribuer.html            Proposer un script (formulaire envoyé par e-mail via FormSubmit)
+contact.html               E-mail et réseaux
+merci.html                 Page affichée après l'envoi du formulaire
+notions.html               Les mots qu'on emploie, expliqués une fois
+methode.html               Comment une vidéo est fabriquée, qui vérifie quoi
+corrections.html           Toutes les corrections publiées, et comment signaler une erreur
+style.css                  La charte graphique en CSS
+site.js                    Menus déroulants, compteur de mots du formulaire
+donnees/                   Nos calculs en CSV, à télécharger depuis les pages
+assets/                    Logo, et photos de l'équipe (assets/equipe/)
+outils/                    Les scripts Python qui ont généré les pages du lancement
 ```
 
 Aucun outil à installer, aucune étape de construction : ce sont des pages HTML écrites à la main, qui se modifient dans n'importe quel éditeur de texte, ou directement sur GitHub (icône crayon sur un fichier). Les polices (Source Sans 3, Source Serif 4, Source Code Pro) sont chargées depuis Google Fonts.

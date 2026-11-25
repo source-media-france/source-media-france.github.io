@@ -5,7 +5,7 @@
   1. Copier ce fichier sous un nom court en minuscules sans accent : videos/mon-sujet.html
   2. Remplacer tout ce qui est entre [[ ]].
   3. Supprimer les sections qui ne servent pas (par exemple « Les données » s'il n'y a aucun calcul).
-  4. Ajouter la vidéo dans videos/index.html (une carte) et, si c'est une des trois dernières, dans index.html.
+  4. Ajouter une carte dans la page de sa série (videos/<thème>.html) et dans videos/calendrier.html (voir TUTO.md, recette 2.5).
   5. Si la vidéo explique une notion nouvelle, l'ajouter dans notions.html.
 -->
 <head>
@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+3:wght@400;700&family=Source+Serif+4:ital@1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css?v=20261125">
 </head>
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
@@ -27,30 +27,37 @@
     <details class="menu">
       <summary aria-current="page">Vidéos</summary>
       <div class="menu-liste">
-      <a href="index.html">Toutes les vidéos</a>
-      <a href="index.html#calendrier">Le calendrier</a>
-      <a href="index.html#par-date">Par date de publication</a>
-      <span class="menu-titre">Par thème</span>
-      <a href="index.html#le-media">Le média</a>
-      <a href="index.html#comprendre-les-chiffres">Comprendre les chiffres</a>
-      <a href="index.html#immigration">Immigration</a>
-      <a href="index.html#dette-publique">Dette publique</a>
-      <a href="index.html#corruption">Corruption</a>
-      <a href="index.html#education">Éducation</a>
-      <a href="index.html#violences">Violences sexistes et sexuelles</a>
-      <a href="index.html#logement">Logement</a>
+        <a href="../videos/calendrier.html">Le calendrier des sorties</a>
+        <a href="../videos/index.html">Toutes les séries</a>
+        <span class="menu-titre">Par thème</span>
+        <a href="../videos/le-media.html">Le média</a>
+        <a href="../videos/comprendre-les-chiffres.html">Comprendre les chiffres</a>
+        <a href="../videos/immigration.html">Immigration</a>
+        <a href="../videos/dette-publique.html">Dette publique</a>
+        <a href="../videos/corruption.html">Corruption</a>
+        <a href="../videos/education.html">Éducation</a>
+        <a href="../videos/violences.html">Violences sexistes et sexuelles</a>
       </div>
     </details>
     <a href="../notions.html">Notions</a>
     <a href="../methode.html">Méthode</a>
-    <a href="../a-propos.html">À propos</a>
+    <details class="menu menu-droite">
+      <summary>À propos</summary>
+      <div class="menu-liste">
+        <a href="../a-propos.html">Notre mission</a>
+        <a href="../equipe.html">Qui sommes-nous ?</a>
+        <a href="../contribuer.html">Contribuer</a>
+        <a href="../contact.html">Contact</a>
+      </div>
+    </details>
+    <a href="../contribuer.html" class="nav-contribuer">Contribuer</a>
   </nav>
 </div></header>
 
 <section class="titre"><div class="wrap">
   <p class="sur">[[Dossier · épisode N]] · [[FORMAT]] · [[durée]]</p>
   <h1>[[Titre de la vidéo]]</h1>
-  <p class="sous">« [[L'affirmation ou la question de départ, telle qu'elle circule.]] »</p>
+  <p class="explique">[[Ce que la vidéo explique, en une phrase. Pas de citation.]]</p>
 </div></section>
 
 <main id="contenu" class="contenu"><div class="wrap">
@@ -65,10 +72,10 @@
     <tr><th>La question</th><td>[[La question précise.]]</td></tr>
     <tr><th>La réponse</th><td>[[La réponse en une ou deux phrases.]]</td></tr>
     <tr><th>Résumé</th><td>[[Trois ou quatre phrases : le point de départ, ce que la vidéo explique, étape par étape, et sa conclusion.]]</td></tr>
-    <tr><th>Avec</th><td><span class="cartouche">[[Prénom Nom · discipline]]</span></td></tr>
+    <tr><th>Avec</th><td><span class="cartouche">[[Prénom Nom · titre · établissement]]</span></td></tr>
     <tr><th>Source principale</th><td><span class="crochet long">[[Auteur, année, revue ou organisme]]</span></td></tr>
     <tr><th>La limite</th><td>[[Ce que la vidéo ne permet pas de conclure.]]</td></tr>
-    <tr><th>Thème</th><td><a href="index.html#[[ancre-du-theme]]">[[Nom du thème]]</a> · [[dossier, épisode N]]</td></tr>
+    <tr><th>Thème</th><td><a href="[[nom-du-theme]].html">[[Nom du thème]]</a> · [[dossier, épisode N]]</td></tr>
     <tr><th>Notion</th><td><a href="../notions.html#[[ancre]]">[[Nom de la notion]]</a></td></tr>
     <tr><th>Légende publiée</th><td class="gris">[[La question. La réponse. Avec : Prénom Nom, discipline. Source : auteurs, année, titre, lien.]]</td></tr>
   </table>
@@ -162,10 +169,10 @@
 <footer class="pied"><div class="wrap">
   <p class="signature"><span class="surligne">T'as la source ? On va la chercher.</span></p>
   <p>SOURCE ? est un collectif de chercheurs. Toutes les contributions sont bénévoles ; le média n'a ni financement ni partenaire.</p>
-  <p>Sur les réseaux : <span class="mono">@source.media.france</span> (TikTok, Instagram).</p>
-  <p>Une erreur dans une vidéo ? <a href="../corrections.html">Signalez-la</a>. Vous êtes chercheur ? <a href="../a-propos.html#contribuer">Contribuez</a>.</p>
-  <p class="meta">Site de coulisses · version de travail · octobre 2026</p>
+  <p class="reseaux"><a href="https://www.instagram.com/source.media.france/">Instagram</a> · <a href="https://www.tiktok.com/@source.media.france">TikTok</a> · <a href="https://www.linkedin.com/company/source-media-france/">LinkedIn</a> · <a href="mailto:source.media.france@gmail.com">source.media.france@gmail.com</a></p>
+  <p>Une erreur dans une vidéo ? <a href="../corrections.html">Signalez-la</a>. Vous êtes chercheur ou chercheuse ? <a href="../contribuer.html">Proposez un script</a>.</p>
+  <p class="meta">Site de coulisses de SOURCE ? · <a href="../contact.html">contact</a></p>
 </div></footer>
-<script src="../site.js"></script>
+<script src="../site.js?v=20261125"></script>
 </body>
 </html>

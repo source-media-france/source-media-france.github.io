@@ -39,13 +39,18 @@ Sans cette étape, on peut lire les fichiers, mais pas les modifier.
 |---|---|
 | La page d'accueil | `index.html` |
 | La page d'une vidéo | `videos/nom-de-la-video.html` |
-| La liste des vidéos, les thèmes | `videos/index.html` |
+| Le calendrier des sorties | `videos/calendrier.html` |
+| La page d'une série (un thème) | `videos/immigration.html`, `videos/dette-publique.html`… |
+| La liste des séries | `videos/index.html` |
 | Les notions (moyenne, corrélation…) | `notions.html` |
 | La méthode | `methode.html` |
-| À propos, cofondateurs, contact | `a-propos.html` |
+| Notre mission, nos engagements | `a-propos.html` |
+| Qui sommes-nous : membres, photos, liens | `equipe.html` |
+| Le formulaire pour proposer un script | `contribuer.html` |
+| Les adresses et les réseaux | `contact.html` (et le pied de page de chaque page) |
 | La liste des corrections | `corrections.html` |
 | Les fichiers de données à télécharger | le dossier `donnees/` |
-| Le logo, les images | le dossier `assets/` |
+| Le logo, les images, les photos | le dossier `assets/` |
 | Les couleurs, les polices | `style.css` (à ne toucher qu'avec Claude) |
 | Le modèle d'une nouvelle vidéo | `videos/_modele.html` |
 
@@ -167,43 +172,34 @@ C'est la recette la plus longue. Elle a trois étapes : créer la page, l'ajoute
 7. Supprimer les sections qui ne servent pas, par exemple « Les données et les calculs » s'il n'y a aucun calcul. Une section va de son `<h2>` jusqu'au `<h2>` suivant. Puis renuméroter les sections qui suivent (le chiffre dans `<span class="num">`).
 8. Valider avec **Commit changes**.
 
-**Étape 2 : l'ajouter à la liste des vidéos.** Ouvrir `videos/index.html`, trouver la section du thème (Cmd + F sur le nom du thème) et coller cette carte dans le bloc `<div class="cartes">` du thème :
+**Étape 2 : l'ajouter à sa série.** Ouvrir la page du thème, par exemple `videos/immigration.html`, et coller cette carte dans le bloc `<div class="cartes">`, à sa place dans l'ordre des épisodes :
 
 ```html
-<article class="carte" data-date="[[2026-11-03]]">
-  <span class="format">[[LE CHIFFRE]] · [[80 s]] · [[épisode 2]]</span>
+<article class="carte">
+  <span class="format">[[épisode 2]] · sortie le [[mardi 8 décembre]] · [[60 s]]</span>
   <h3><a href="[[parachute-preuves.html]]">[[Titre de la vidéo]]</a></h3>
-  <p class="dit">« [[L'affirmation ou la question de départ]] »</p>
-  <p class="avec">Avec <span class="cartouche">[[Prénom Nom · discipline]]</span></p>
+  <p>[[Ce que la vidéo explique, en une phrase. Pas de citation.]]</p>
+  <p class="avec">Avec <strong>[[Prénom Nom]]</strong><span class="qui-titre">[[titre · établissement]]</span></p>
 </article>
 ```
 
-- `data-date` est la date de publication, écrite **année-mois-jour**. C'est elle qui range la vidéo dans la vue « Par date ».
-- Si le thème n'a encore aucune vidéo, il a un encadré gris « Aucune vidéo publiée pour l'instant ». Remplacer tout le bloc, de `<div class="vide">` jusqu'à son `</div>`, par :
+Si la vidéo était déjà annoncée sans page (carte en pointillés, classe `a-venir`), remplacer cette carte-là : retirer ` a-venir`, mettre le titre en lien, et enlever `class="gris"` du paragraphe.
+
+**Étape 3 : l'ajouter au calendrier.** Ouvrir `videos/calendrier.html`. Sous le bon jour (un titre `<h3 class="jour">`), coller la même carte en commençant la ligne de format par le nom du thème et sans la date : `<span class="format">[[Immigration]] · [[épisode 2]]</span>`. S'il n'y a pas encore de titre pour ce jour, copier un bloc existant, du `<h3 class="jour">` jusqu'au `</div>` qui ferme ses cartes. Les vidéos sans date vont dans la section « Prévues, date à fixer ».
+
+**Étape 4 : l'accueil.** Pendant le lancement, `index.html` montre les vidéos du 1er décembre. Ensuite, remplacer ces cartes par les dernières sorties (cinq au plus), en ajoutant `videos/` devant le nom de la page dans le lien.
+
+### 2.6 Une vidéo sort sur les réseaux
+
+Dans la page de la vidéo, remplacer le badge `<p><span class="statut">à paraître le …</span></p>` (et l'encadré « VIDÉO PILOTE » s'il y en a un) par :
 
 ```html
-<div class="cartes">
-  [[coller la carte ici]]
-</div>
+<p><span class="statut">publiée le [[1er décembre 2026]]</span></p>
+
+<p>Voir la vidéo : <a href="[[lien Instagram]]">Instagram</a> · <a href="[[lien TikTok]]">TikTok</a> · <a href="[[lien LinkedIn]]">LinkedIn</a></p>
 ```
 
-- Pour une vidéo de la série « Les bases », mettre aussi à jour sa ligne dans le tableau des seize épisodes : mettre le titre en lien et remplacer `<td class="gris">scriptée</td>` par `<td><span class="statut">publiée</span></td>`.
-
-**Étape 3 : l'ajouter à l'accueil.** Ouvrir `index.html`, section 2 (pendant le lancement, « Le lancement : mardi 1er décembre » ; ensuite, « Les dernières vidéos »). Coller la même carte en premier dans le bloc `<div class="cartes">`, en ajoutant `videos/` devant le nom de la page dans le lien (`href="videos/parachute-preuves.html"`), et en retirant `data-date`. Garder cinq cartes au plus : supprimer la plus ancienne.
-
-**Étape 4 : le calendrier.** Dans `videos/index.html`, section « Le calendrier du lancement », mettre un lien sur le titre de la vidéo : `<a href="parachute-preuves.html">Titre</a>`.
-
-### 2.6 Une vidéo pilote est publiée sur les réseaux
-
-Dans la page de la vidéo, remplacer le badge et l'encadré « VIDÉO PILOTE », c'est-à-dire tout ce qui va de `<p><span class="statut">pilote</span></p>` jusqu'au `</div>` de l'encadré, par :
-
-```html
-<p><span class="statut">publiée le [[3 novembre 2026]]</span></p>
-
-<p>Voir la vidéo : <a href="[[lien TikTok]]">TikTok</a> · <a href="[[lien Instagram]]">Instagram</a></p>
-```
-
-Puis, dans `videos/index.html` et dans `index.html` : retirer « · pilote » de la ligne de format de la carte, et mettre la vraie date de publication dans `data-date`.
+Dans la ligne grise sous le titre de la page (`<p class="sur">`), remplacer « à paraître le » par « publiée le ».
 
 ### 2.7 Ajouter un fichier de données à télécharger
 
@@ -276,12 +272,22 @@ Puis, dans `corrections.html`, remplacer la ligne « Aucune correction pour l'in
 
 Pour les corrections suivantes, ajouter une ligne en haut du tableau. **On ne supprime jamais une page ni une correction.**
 
-### 2.11 Ce qu'il vaut mieux demander à Claude
+### 2.11 Ajouter une photo ou des liens sur « Qui sommes-nous ? »
 
-- **Ajouter ou renommer un thème.** Le menu « Vidéos » est recopié dans les dix pages du site : il faut le changer partout à la fois.
+1. Recadrer la photo en carré, la nommer comme la personne (`hanna-bony.jpg`), et la déposer dans le dossier `assets/equipe/` (Add file, Upload files).
+2. Dans `equipe.html`, chaque membre a un commentaire `<!-- Pour mettre une photo : … -->` qui donne la ligne exacte à mettre à la place du carré noir avec les initiales.
+3. Pour les liens, remplacer le commentaire `<!-- Liens : … -->` par la ligne qu'il contient, avec les vraies adresses.
+
+### 2.12 Le formulaire « Contribuer »
+
+Les propositions arrivent par e-mail sur source.media.france@gmail.com, grâce au service gratuit FormSubmit. **La toute première fois**, FormSubmit envoie un e-mail « Activate Form » à cette adresse : il faut cliquer sur le bouton d'activation, sinon rien n'arrive. La limite de mots se change dans `contribuer.html` : chercher `data-max-mots="300"` et le texte « 300 mots au maximum ».
+
+### 2.13 Ce qu'il vaut mieux demander à Claude
+
+- **Ajouter ou renommer une série.** Le menu « Vidéos » est recopié dans toutes les pages du site : il faut le changer partout à la fois.
 - **Un nouveau graphique** dessiné aux couleurs de la charte.
 - **Une nouvelle vidéo complète**, à partir du script : Claude rédige la page, le résumé, l'explication en images, cherche les liens des sources, et prépare le fichier de données.
-- **Changer la mise en page, les couleurs, le menu.**
+- **Changer la mise en page, les couleurs, le menu.** Après une modification de `style.css`, il faut changer le numéro `?v=…` qui suit `style.css` dans toutes les pages, sinon les navigateurs gardent l'ancienne version.
 
 ---
 

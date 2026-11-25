@@ -6,6 +6,15 @@ from svg import *
 from liens import L, F   # liens et chiffres vérifiés, remplis à part
 
 SITE = os.getcwd()
+EXPL = {
+ "presentation-du-media.html": "Qui nous sommes et comment on travaille : partir d'un chiffre qui circule, lire ce que la recherche en dit, et le raconter en une minute, la source à l'écran.",
+ "immigre-ou-etranger.html": "La différence entre immigré et étranger, selon l'Insee : on reste immigré toute sa vie, on cesse d'être étranger en devenant français.",
+ "dette-publique-c-est-quoi.html": "Qui emprunte quand on parle de dette publique, et comment un déficit se transforme en dette.",
+ "dette-publique-pourquoi-elle-augmente.html": "La différence entre le déficit et la dette, et pourquoi la dette monte tant que le déficit dépasse ce qui est remboursé.",
+ "taille-des-classes.html": "Ce qu'ont montré deux expériences, au Tennessee et dans les CP dédoublés en France, et ce qu'on ne sait pas encore pour le lycée.",
+ "moyenne-mediane.html": "Pourquoi le salaire moyen n'est pas le salaire du milieu, avec les chiffres 2025 de l'Insee : la moyenne et la médiane.",
+ "migrant-ou-refugie.html": "Pourquoi « migrant » est un mot large et « réfugié » un statut précis, défini par la Convention de Genève de 1951.",
+}
 GRIS_C = ' class="gris"'
 MONO_C = ' class="mono"'
 TITRE_IMMIG = "Insee, 2026, L'essentiel sur les immigrés et les étrangers"
@@ -13,9 +22,9 @@ base = open(os.path.join(SITE, "videos/risque-relatif-absolu.html"), encoding="u
 HEAD = base[:base.index('<section class="titre">')]
 FOOT = base[base.index('<footer class="pied">'):]
 
-HB = '<span class="cartouche">Hanna Bony · économiste</span>'
-MT = '<span class="cartouche">Marine de Talancé · enseignante-chercheuse</span>'
-MF = '<span class="cartouche">Marin Ferry · enseignant-chercheur en économie</span>'
+HB = '<span class="cartouche">Hanna Bony · doctorante en économie · Université Gustave Eiffel</span>'
+MT = '<span class="cartouche">Marine de Talancé · enseignante-chercheuse en économie · Université Gustave Eiffel</span>'
+MF = '<span class="cartouche">Marin Ferry · enseignant-chercheur en économie · Université Gustave Eiffel</span>'
 
 def a(cle, texte=None):
     url = L[cle]
@@ -63,7 +72,7 @@ def page(fname, titre, desc, sur, accroche, statut, fiche, explication, montre, 
     html = f'''{head}<section class="titre"><div class="wrap">
   <p class="sur">{sur}</p>
   <h1>{titre}</h1>
-  <p class="sous">« {accroche} »</p>
+  <p class="explique">{EXPL.get(fname, accroche)}</p>
 </div></section>
 
 <main id="contenu" class="contenu"><div class="wrap">
@@ -115,7 +124,7 @@ page("presentation-du-media.html", "Présentation du média",
       ("Résumé", "La vidéo part de trois chiffres que tout le monde a vus passer en novembre 2026 : 8,2 % de chômage, 54 milliards d'euros d'effort au budget 2027, 285 000 victimes de violences conjugales enregistrées. D'où viennent-ils ? Hanna présente le collectif : des chercheurs qui partent d'un chiffre ou d'une affirmation qui circule, vont lire ce que la recherche en dit, et le racontent en une minute, la source à l'écran. Pas de verdict « vrai » ou « faux » : parfois c'est confirmé, parfois démonté, et parfois on ne sait pas. Elle termine en invitant chacun à proposer en commentaire un chiffre qui l'intrigue."),
       ("Avec", HB),
       ("La limite", "La vidéo ne vérifie aucun des trois chiffres : elle montre d'où ils viennent. Chacun aura sa propre vidéo."),
-      ("Thème", '<a href="index.html#le-media">Le média</a>'),
+      ("Thème", '<a href="le-media.html">Le média</a>'),
       ("Pour aller plus loin", '<a href="../methode.html">Notre méthode</a> · <a href="../a-propos.html">Qui nous sommes</a>')],
      f'''<p class="chapeau">Chaque mois, des chiffres circulent sans leur source. SOURCE ? part de ces chiffres et va chercher d'où ils viennent, ce qu'ils mesurent, et ce que la recherche en dit.</p>
 
@@ -184,8 +193,8 @@ page("immigre-ou-etranger.html", "Immigré ou étranger : est-ce la même chose 
       ("Avec", MT),
       ("Source principale", f'<span class="crochet long">{a("insee_immig", TITRE_IMMIG)}</span>'),
       ("La limite", "Les chiffres viennent du recensement : ils comptent les personnes qui vivent en France depuis au moins un an, ou qui comptent y rester au moins un an."),
-      ("Thème", '<a href="index.html#immigration">Immigration</a> · épisode 1'),
-      ("Légende publiée", '<span class="gris">Immigré, étranger : est-ce la même chose ? Non : un immigré est né étranger à l\'étranger, un étranger n\'a pas la nationalité française aujourd\'hui. Avec Marine de Talancé, enseignante-chercheuse. Les prises de position n\'engagent que leur auteur.</span>')],
+      ("Thème", '<a href="immigration.html">Immigration</a> · épisode 1'),
+      ("Légende publiée", '<span class="gris">Immigré, étranger : est-ce la même chose ? Non : un immigré est né étranger à l\'étranger, un étranger n\'a pas la nationalité française aujourd\'hui. Avec Marine de Talancé, enseignante-chercheuse en économie à l\'Université Gustave Eiffel. Les prises de position n\'engagent que leur auteur.</span>')],
      f'''<p class="chapeau">Dans le débat public, « immigré » et « étranger » sont souvent employés l'un pour l'autre. Pour l'Insee, ce sont deux populations différentes, qui se recouvrent en partie seulement.</p>
 
   <p>Pour être <strong>immigré</strong>, il faut deux choses : être né à l'étranger, et être né sans la nationalité française. C'est une question de naissance, donc ça ne change jamais. Pour être <strong>étranger</strong>, il suffit de ne pas avoir la nationalité française aujourd'hui. C'est une question de nationalité, donc ça peut changer.</p>
@@ -259,8 +268,8 @@ page("dette-publique-c-est-quoi.html", "La dette publique, c'est quoi ?",
       ("Avec", MF),
       ("Source principale", f'<span class="crochet long">{a("insee_dette_def", "Insee, définition de la dette publique")}</span>'),
       ("La limite", "La vidéo explique ce qu'est la dette et d'où elle vient, pas s'il faut s'en inquiéter. C'est une autre question, pour un prochain épisode."),
-      ("Thème", '<a href="index.html#dette-publique">Dette publique</a> · épisode 1 · suite : <a href="dette-publique-pourquoi-elle-augmente.html">pourquoi la dette augmente</a>'),
-      ("Légende publiée", '<span class="gris">La dette publique, c\'est quoi ? L\'argent que les administrations publiques empruntent quand leurs recettes ne couvrent pas leurs dépenses. Avec Marin Ferry, enseignant-chercheur en économie. Les prises de position n\'engagent que leur auteur.</span>')],
+      ("Thème", '<a href="dette-publique.html">Dette publique</a> · épisode 1 · suite : <a href="dette-publique-pourquoi-elle-augmente.html">pourquoi la dette augmente</a>'),
+      ("Légende publiée", '<span class="gris">La dette publique, c\'est quoi ? L\'argent que les administrations publiques empruntent quand leurs recettes ne couvrent pas leurs dépenses. Avec Marin Ferry, enseignant-chercheur en économie à l\'Université Gustave Eiffel. Les prises de position n\'engagent que leur auteur.</span>')],
      f'''<p class="chapeau">On parle de « la dette de la France » comme d'un seul bloc. En réalité, ceux qui empruntent sont un ensemble précis d'administrations, et la dette naît d'un mécanisme simple : dépenser plus qu'on ne reçoit.</p>
 
   <p>Premier point : qui emprunte ? Les statisticiens parlent des <strong>administrations publiques</strong>. Elles regroupent trois ensembles.</p>
@@ -319,7 +328,7 @@ page("dette-publique-pourquoi-elle-augmente.html", "Pourquoi la dette publique a
       ("Avec", MF),
       ("Source principale", f'<span class="crochet long">{a("insee_dette_trim", "Insee, la dette trimestrielle de Maastricht")}</span>'),
       ("La limite", "La vidéo explique pourquoi la dette monte, pas s'il faut s'en inquiéter : la réponse dépend de la taille de la dette par rapport à la richesse produite chaque année. C'est une autre question."),
-      ("Thème", '<a href="index.html#dette-publique">Dette publique</a> · épisode 2 · avant : <a href="dette-publique-c-est-quoi.html">la dette publique, c\'est quoi ?</a>')],
+      ("Thème", '<a href="dette-publique.html">Dette publique</a> · épisode 2 · avant : <a href="dette-publique-c-est-quoi.html">la dette publique, c\'est quoi ?</a>')],
      f'''<p class="chapeau">Fin juin 2026, la dette publique française atteint 3 595,5 milliards d'euros, soit 119 % de la richesse produite en un an, un record <span class="crochet">Insee, 29 septembre 2026</span>. Le chiffre fait peur. Avant de savoir s'il faut s'en inquiéter, il faut comprendre pourquoi elle monte, et pour ça, distinguer deux choses : le déficit et la dette.</p>
 
   <div class="tuiles">
@@ -371,8 +380,8 @@ page("taille-des-classes.html", "Moins d'élèves par classe, ça marche ?",
       ("Avec", HB),
       ("Source principale", f'<span class="crochet long">{a("krueger_whitmore", "Krueger et Whitmore, 2001, Economic Journal")}</span> <span class="crochet long">{a("depp_2026", "DEPP, Synthèse n° 8, 2026")}</span>'),
       ("La limite", "Les deux expériences portent sur l'école primaire. En France, l'effet est net en fin de CE1, puis s'estompe : à l'entrée en sixième, il a disparu en français et reste faible en maths. Pour une terminale à trente, la recherche ne sait pas encore répondre."),
-      ("Thème", '<a href="index.html#education">Éducation</a>'),
-      ("Légende publiée", '<span class="gris">Des classes moins chargées, ça marche ? Au primaire oui, surtout pour les élèves défavorisés ; au lycée, on ne sait presque rien. Avec Hanna Bony, économiste. Les prises de position n\'engagent que leur auteur.</span>')],
+      ("Thème", '<a href="education.html">Éducation</a>'),
+      ("Légende publiée", '<span class="gris">Des classes moins chargées, ça marche ? Au primaire oui, surtout pour les élèves défavorisés ; au lycée, on ne sait presque rien. Avec Hanna Bony, doctorante en économie à l\'Université Gustave Eiffel. Les prises de position n\'engagent que leur auteur.</span>')],
      f'''<p class="chapeau">Réduire la taille des classes revient dans chaque débat sur l'école. C'est l'une des rares mesures éducatives qui ont été testées avec un vrai tirage au sort. Voici ce qu'on a trouvé, et où s'arrêtent les résultats.</p>
 
   <p><strong>Le Tennessee, 1985.</strong> L'expérience s'appelle Project STAR. Pendant leurs premières années d'école, 11 600 enfants sont répartis au hasard entre des petites classes, de 13 à 17 élèves, et des classes normales, de 22 à 25. Comme le hasard a fait les groupes, la seule différence entre eux, c'est la taille de la classe. Des années plus tard, les chercheurs regardent combien passent l'examen d'entrée à l'université.</p>
@@ -456,9 +465,9 @@ page("moyenne-mediane.html", "Le Français « moyen » existe-t-il ?",
       ("Avec", HB),
       ("Source principale", f'<span class="crochet long">{a("insee_salaires", "Insee Première n° 2132, octobre 2026")}</span>'),
       ("La limite", "Aucun des deux chiffres n'est faux : ils ne répondent pas à la même question. Et les deux portent sur les salariés du privé, en équivalent temps plein."),
-      ("Thème", '<a href="index.html#comprendre-les-chiffres">Comprendre les chiffres</a>'),
+      ("Thème", '<a href="comprendre-les-chiffres.html">Comprendre les chiffres</a>'),
       ("Notion", '<a href="../notions.html#moyenne-mediane">Moyenne et médiane</a>'),
-      ("Légende publiée", '<span class="gris">Le salaire du « Français moyen » existe-t-il ? La moyenne (2 797 €) dépasse la médiane (2 238 €) : plus de la moitié des salariés du privé gagnent moins que la moyenne. Avec Hanna Bony, économiste. Les prises de position n\'engagent que leur auteur.</span>')],
+      ("Légende publiée", '<span class="gris">Le salaire du « Français moyen » existe-t-il ? La moyenne (2 797 €) dépasse la médiane (2 238 €) : plus de la moitié des salariés du privé gagnent moins que la moyenne. Avec Hanna Bony, doctorante en économie à l\'Université Gustave Eiffel. Les prises de position n\'engagent que leur auteur.</span>')],
      f'''<p class="chapeau">Deux chiffres résument les salaires du privé en France. Ils sont tous les deux justes, et ils ne disent pas la même chose.</p>
 
   <p>La <strong>moyenne</strong>, c'est la somme de tous les salaires divisée par le nombre de salariés. Une poignée de très hauts salaires pèse donc très lourd dans l'addition, et tire la moyenne vers le haut.</p>
@@ -529,7 +538,7 @@ page("migrant-ou-refugie.html", "Migrant ou réfugié : est-ce la même chose ?"
       ("Avec", MT),
       ("Source principale", f'<span class="crochet long">{a("convention_1951", "Convention de Genève, 1951, article 1 A(2)")}</span>'),
       ("La limite", "La vidéo explique les mots, pas les chiffres : combien de migrants ou de réfugiés vivent en France dépend de qui compte, et de comment."),
-      ("Thème", '<a href="index.html#immigration">Immigration</a> · épisode 2 · avant : <a href="immigre-ou-etranger.html">immigré ou étranger</a>')],
+      ("Thème", '<a href="immigration.html">Immigration</a> · épisode 2 · avant : <a href="immigre-ou-etranger.html">immigré ou étranger</a>')],
      f'''<p class="chapeau">« Crise des migrants » ou « crise des réfugiés » : en 2015, les deux expressions ont circulé pour parler des mêmes arrivées en Europe. Elles ne sont pas fausses, mais elles ne disent pas la même chose.</p>
 
   <p><strong>Migrant</strong> est un mot large, sans définition juridique : il désigne toute personne qui part vivre ailleurs, dans son pays ou dans un autre, quelle qu'en soit la raison. <strong>Réfugié</strong> est un statut précis, défini par la Convention de Genève de 1951. Le second est donc un cas particulier du premier.</p>

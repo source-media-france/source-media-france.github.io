@@ -394,3 +394,64 @@ details.menu summary[aria-current="page"] { border-bottom-color: var(--jaune); }
 .tuile .chiffre { font-size: clamp(2rem, 6vw, 2.8rem); font-weight: 700; line-height: 1; margin-bottom: 0.4rem; }
 .tuile .quoi { font-weight: 700; margin-bottom: 0.2rem; }
 .tuile p { margin: 0; }
+
+/* ---------- Refonte du 25 novembre : menus, séries, équipe, formulaire, contact ---------- */
+
+.titre .explique { font-size: 1.2rem; line-height: 1.45; margin-top: 0.8rem; color: #EDEDED; max-width: 38rem; }
+.nav { align-items: center; }
+.nav .nav-contribuer { background: var(--jaune); color: var(--encre); padding: 0.15em 0.6em; border-bottom: 0; font-weight: 700; }
+.nav .nav-contribuer:hover { background: var(--blanc); }
+@media (min-width: 700px) { .menu-droite .menu-liste { left: auto; right: 0; } }
+
+h3.jour { margin-top: 1.8rem; padding-bottom: 0.3rem; border-bottom: 1.5px solid var(--encre); }
+h3.jour + .cartes { margin-top: 0.8rem; }
+.carte p { margin-bottom: 0; }
+.carte.a-venir { border-style: dashed; border-color: var(--gris); }
+
+.series { display: grid; gap: 1rem; margin: 1.4rem 0; }
+@media (min-width: 640px) { .series { grid-template-columns: 1fr 1fr; } }
+.serie { display: block; text-decoration: none; border: 1.5px solid var(--encre); padding: 1rem 1.1rem; }
+.serie:hover { background: var(--jaune); }
+.serie .format { font-family: var(--mono); font-size: 0.75rem; color: var(--gris); }
+.serie h3 { margin: 0.3rem 0 0.3rem; }
+.serie p { margin: 0; }
+
+.membres { display: grid; gap: 1.6rem; margin: 1.6rem 0 2rem; }
+.membre { display: grid; grid-template-columns: 96px 1fr; gap: 1rem; align-items: start; }
+.membre h3 { margin: 0 0 0.2rem; }
+.membre p { margin: 0 0 0.4rem; }
+.titre-membre { font-family: var(--mono); font-size: 0.82rem; color: var(--gris); }
+.portrait { width: 96px; height: 96px; object-fit: cover; background: var(--encre); color: var(--jaune); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.7rem; letter-spacing: 0.03em; }
+
+.formulaire { display: grid; gap: 1rem; margin: 1.2rem 0 2rem; }
+.formulaire label { display: grid; gap: 0.3rem; font-weight: 700; }
+.formulaire .deux { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .formulaire .deux { grid-template-columns: 1fr 1fr; } }
+.formulaire input[type=text], .formulaire input[type=email], .formulaire select, .formulaire textarea {
+  font: inherit; font-weight: 400; color: var(--encre); background: var(--blanc);
+  border: 1.5px solid var(--encre); border-radius: 0; padding: 0.5em 0.6em; width: 100%;
+}
+.formulaire textarea { resize: vertical; }
+.formulaire input:focus, .formulaire select:focus, .formulaire textarea:focus { outline: 3px solid var(--jaune); outline-offset: 0; }
+.formulaire .aide { font-weight: 400; color: var(--gris); font-size: 0.9rem; }
+.formulaire .requis { color: var(--gris); font-weight: 400; }
+.formulaire fieldset { border: 1.5px solid var(--gris-clair); padding: 0.7rem 0.9rem; margin: 0; }
+.formulaire legend { font-weight: 700; padding: 0 0.3rem; }
+.formulaire .choix { display: flex; gap: 0.5rem; align-items: baseline; font-weight: 400; }
+.formulaire button { font: inherit; font-weight: 700; background: var(--encre); color: var(--blanc); border: 0; padding: 0.7em 1.4em; cursor: pointer; justify-self: start; }
+.formulaire button:hover { background: var(--jaune); color: var(--encre); }
+.formulaire button[disabled] { background: var(--gris); cursor: not-allowed; }
+.compteur { font-family: var(--mono); font-size: 0.8rem; font-weight: 400; color: var(--gris); }
+.compteur.trop { background: var(--jaune); color: var(--encre); padding: 0 0.3em; justify-self: start; }
+.piege { position: absolute; left: -9999px; }
+
+.contacts { display: grid; gap: 1rem; margin: 0.4rem 0 1.8rem; }
+@media (min-width: 640px) { .contacts { grid-template-columns: 1fr 1fr; } }
+.contact { display: grid; gap: 0.2rem; text-decoration: none; border: 1.5px solid var(--encre); padding: 1rem 1.1rem; }
+.contact:hover { background: var(--jaune); }
+.contact .format { font-family: var(--mono); font-size: 0.75rem; color: var(--gris); }
+.contact strong { font-size: 1.1rem; word-break: break-word; }
+
+.pied .reseaux a { font-weight: 700; }
+.carte .avec strong { font-weight: 700; }
+.carte .qui-titre { display: block; font-family: var(--mono); font-size: 0.75rem; color: var(--gris); margin-top: 0.15rem; }
