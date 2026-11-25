@@ -1,0 +1,7 @@
+indicateur,valeur,unite,champ,source,lien,statut
+salaire net moyen en equivalent temps plein,2797,euros par mois,"France, secteur prive, 2025","Insee Premiere n 2132, 22 octobre 2026",https://www.insee.fr/fr/statistiques/9087193,vérifié dans la source le 25 novembre 2026
+salaire net median en equivalent temps plein,2238,euros par mois,"France, secteur prive, 2025","Insee Premiere n 2132, 22 octobre 2026",https://www.insee.fr/fr/statistiques/9087193,vérifié dans la source le 25 novembre 2026
+6e decile,2497,euros par mois,idem,"Insee Premiere n 2132, fichier de donnees",https://www.insee.fr/fr/statistiques/fichier/9087193/ip2132.xlsx,vérifié dans la source le 25 novembre 2026
+7e decile,2850,euros par mois,idem,"Insee Premiere n 2132, fichier de donnees",https://www.insee.fr/fr/statistiques/fichier/9087193/ip2132.xlsx,vérifié dans la source le 25 novembre 2026
+ecart moyenne moins mediane,559,euros par mois,calcul,2797 - 2238,,calcul
+part des salaries sous la moyenne,entre 60 et 70,pourcent,calcul,la moyenne est entre le 6e et le 7e decile,,calcul

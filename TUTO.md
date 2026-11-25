@@ -189,7 +189,9 @@ C'est la recette la plus longue. Elle a trois étapes : créer la page, l'ajoute
 
 - Pour une vidéo de la série « Les bases », mettre aussi à jour sa ligne dans le tableau des seize épisodes : mettre le titre en lien et remplacer `<td class="gris">scriptée</td>` par `<td><span class="statut">publiée</span></td>`.
 
-**Étape 3 : l'ajouter à l'accueil.** Ouvrir `index.html`, section « Les dernières vidéos ». Coller la même carte en premier dans le bloc `<div class="cartes">`, en ajoutant `videos/` devant le nom de la page dans le lien (`href="videos/parachute-preuves.html"`). Puis supprimer la dernière carte, pour qu'il en reste trois.
+**Étape 3 : l'ajouter à l'accueil.** Ouvrir `index.html`, section 2 (pendant le lancement, « Le lancement : mardi 1er décembre » ; ensuite, « Les dernières vidéos »). Coller la même carte en premier dans le bloc `<div class="cartes">`, en ajoutant `videos/` devant le nom de la page dans le lien (`href="videos/parachute-preuves.html"`), et en retirant `data-date`. Garder cinq cartes au plus : supprimer la plus ancienne.
+
+**Étape 4 : le calendrier.** Dans `videos/index.html`, section « Le calendrier du lancement », mettre un lien sur le titre de la vidéo : `<a href="parachute-preuves.html">Titre</a>`.
 
 ### 2.6 Une vidéo pilote est publiée sur les réseaux
 
@@ -323,7 +325,7 @@ Claude enregistre les modifications dans le dossier du site. **Il faut ensuite o
 - **La charte graphique.** Le jaune ne sert qu'aux crochets et à un seul mot surligné par passage. Pas de rouge ni de vert, pas de « VRAI » ni de « FAUX ».
 - **Les noms de fichiers** : en minuscules, sans accent, sans espace, avec des tirets. `parachute-preuves.html`, pas `Parachute preuves.html`.
 - **On ne supprime jamais** une page de vidéo ni une correction. Une erreur se corrige et se signale (recette 2.10).
-- **Les cofondateurs** sont toujours cités par ordre alphabétique : Hanna Bony, Marine de Talancé, Marin Ferry, Andrea Rouchon.
+- **Les cofondateurs** sont toujours cités par ordre alphabétique : Hanna Bony, Melchior Clerc, Marine de Talancé, Marin Ferry, Andrea Rouchon.
 - **Les chiffres** : tant qu'un chiffre n'a pas été relu à la source, il garde son `[à vérifier]`.
 - **Les sources** : un lien vers le document d'origine (l'article, le rapport, la base), pas vers l'article de presse qui en parle.
 

@@ -1,0 +1,10 @@
+indicateur,valeur,unite,champ,source,lien,statut
+eleves de l experience Project STAR,11600,eleves,"Tennessee, a partir de 1985","Krueger, 1999, QJE",https://doi.org/10.1162/003355399556052,d apres le script
+taille des petites classes,13 a 17,eleves,Tennessee,"Krueger, 1999, QJE",https://doi.org/10.1162/003355399556052,d apres le script
+taille des classes normales,22 a 25,eleves,Tennessee,"Krueger, 1999, QJE",https://doi.org/10.1162/003355399556052,d apres le script
+"passent l examen d entree a l universite, petites classes",43.7,pourcent,eleves de terminale en 1998,"Krueger et Whitmore, 2001, Economic Journal",https://doi.org/10.1111/1468-0297.00586,vérifié dans la source le 25 novembre 2026
+"passent l examen d entree a l universite, classes normales",40.0,pourcent,eleves de terminale en 1998,"Krueger et Whitmore, 2001, Economic Journal",https://doi.org/10.1111/1468-0297.00586,vérifié dans la source le 25 novembre 2026
+"eleves par classe de CP en REP+, avant puis apres",22 puis 13,eleves,"France, rentree 2017","DEPP, Synthese n 8, 2026",https://www.education.gouv.fr/depp/reduction-de-la-taille-de-classe-en-education-prioritaire-que-nous-apprennent-les-donnees-de-la-depp-468869,d apres le script
+"effet en fin de CE1, francais, en part de l ecart de debut de CP",16,pourcent,"France, REP+","DEPP, Synthese n 8, 2026",https://www.education.gouv.fr/depp/reduction-de-la-taille-de-classe-en-education-prioritaire-que-nous-apprennent-les-donnees-de-la-depp-468869,vérifié dans la source le 25 novembre 2026
+"effet en fin de CE1, maths, en part de l ecart de debut de CP",38,pourcent,"France, REP+","DEPP, Synthese n 8, 2026",https://www.education.gouv.fr/depp/reduction-de-la-taille-de-classe-en-education-prioritaire-que-nous-apprennent-les-donnees-de-la-depp-468869,vérifié dans la source le 25 novembre 2026
+"eleves par classe, lycee general et technologique",30.2,eleves,"France, rentree 2025","DEPP, Note d information n 26.38",https://www.education.gouv.fr/depp/le-nombre-d-eleves-devant-un-enseignant-dans-le-second-degre-la-rentree-2025-moins-d-eleves-dans-les-505404,vérifié dans la source le 25 novembre 2026
