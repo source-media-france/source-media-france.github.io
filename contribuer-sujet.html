@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposer un sujet · SOURCE ?</title>
+<meta name="description" content="Proposez un sujet ou posez une question à SOURCE ? : un chiffre qui vous intrigue, une affirmation qui vous paraît bizarre. Ouvert à tout le monde.">
+<link rel="icon" href="assets/logo/logo-jaune.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Source+Sans+3:wght@400;700&family=Source+Serif+4:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=20261127">
+</head>
+<body>
+<a class="saut" href="#contenu">Aller au contenu</a>
+<header class="entete"><div class="wrap">
+  <a class="logo" href="index.html"><span class="c">[</span>SOURCE<span class="q">?</span><span class="c">]</span></a>
+  <nav class="nav" aria-label="Navigation">
+    <details class="menu">
+      <summary>Vidéos</summary>
+      <div class="menu-liste">
+        <a href="videos/calendrier.html">Le calendrier des sorties</a>
+        <a href="videos/index.html">Toutes les séries</a>
+        <span class="menu-titre">Par thème</span>
+        <a href="videos/le-media.html">Le média</a>
+        <a href="videos/comprendre-les-chiffres.html">Comprendre les chiffres</a>
+        <a href="videos/immigration.html">Immigration</a>
+        <a href="videos/dette-publique.html">Dette publique</a>
+        <a href="videos/corruption.html">Corruption</a>
+        <a href="videos/education.html">Éducation</a>
+        <a href="videos/violences.html">Violences sexistes et sexuelles</a>
+      </div>
+    </details>
+    <a href="notions.html">Notions</a>
+    <a href="methode.html">Méthode</a>
+    <details class="menu menu-droite">
+      <summary>À propos</summary>
+      <div class="menu-liste">
+        <a href="a-propos.html">Notre mission</a>
+        <a href="equipe.html">Qui sommes-nous ?</a>
+        <a href="contribuer.html">Contribuer</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </details>
+    <a href="contribuer.html" class="nav-contribuer" aria-current="page">Contribuer</a>
+  </nav>
+</div></header>
+
+<section class="titre"><div class="wrap">
+  <p class="sur">contribuer</p>
+  <h1>Proposer un sujet</h1>
+  <p class="explique">Une question, un chiffre qui circule, une affirmation qui vous paraît bizarre : dites-le-nous.</p>
+</div></section>
+
+<main id="contenu" class="contenu"><div class="wrap">
+
+  <nav class="onglets" aria-label="Façons de contribuer">
+    <a href="contribuer.html"><strong>Proposer un script</strong><span>chercheurs</span></a>
+    <a href="contribuer-sujet.html" aria-current="page"><strong>Proposer un sujet ou une question</strong><span>tout le monde</span></a>
+    <a href="contribuer-relecture.html"><strong>Devenir relecteur ou relectrice</strong><span>chercheurs</span></a>
+  </nav>
+
+  <p>Un chiffre vous intrigue, une affirmation vous paraît bizarre, une question vous trotte dans la tête ? Proposez-la. Pas besoin d'être chercheur : les meilleures idées de vidéos viennent souvent de questions toutes simples.</p>
+
+  <div class="principe"><p>Une bonne question est précise. « Les jeunes et le travail » n'est pas une question. « Les jeunes travaillent-ils moins que leurs parents au même âge ? » en est une.</p></div>
+
+  <h2 id="formulaire"><span class="num">1</span>Proposer un sujet ou poser une question</h2>
+
+  <form class="formulaire" action="https://formsubmit.co/source.media.france@gmail.com" method="POST">
+    <input type="hidden" name="_subject" value="SOURCE ? : nouvelle question ou idée de sujet">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://source-media-france.github.io/merci.html">
+    <input type="hidden" name="_autoresponse" value="Merci pour votre question ! Le comité de SOURCE ? la lit. Si elle devient une vidéo, nous vous le dirons. T'as la source ? On va la chercher.">
+    <input type="text" name="_honey" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="deux">
+      <label><span class="libelle">Prénom ou pseudo</span><input type="text" name="nom" autocomplete="given-name"></label>
+      <label><span class="libelle">Adresse e-mail <span class="aide">si vous voulez une réponse</span></span><input type="email" name="email" autocomplete="email"></label>
+    </div>
+    <label><span class="libelle">Vous êtes</span>
+      <select name="profil">
+        <option value="" selected>Je préfère ne pas le dire</option>
+          <option>Étudiant ou étudiante</option>
+          <option>Lycéen ou lycéenne</option>
+          <option>Enseignant ou enseignante</option>
+          <option>Chercheur ou chercheuse</option>
+          <option>Journaliste</option>
+          <option>Autre</option>
+      </select>
+    </label>
+    <label><span class="libelle">Votre sujet ou votre question <span class="requis">*</span> <span class="aide">200 mots au maximum</span></span>
+      <textarea name="question" rows="7" required data-max-mots="200" placeholder="par exemple : on entend partout que… est-ce vrai ?"></textarea>
+      <span class="compteur" aria-live="polite"></span>
+    </label>
+    <label><span class="libelle">Où l'avez-vous vu ? <span class="aide">un lien vers la vidéo, l'article ou le post, si vous l'avez</span></span>
+      <input type="text" name="lien">
+    </label>
+
+    <button type="submit">Envoyer ma question</button>
+    <p class="meta">Le formulaire passe par le service FormSubmit, qui transmet votre message à source.media.france@gmail.com. Vos informations ne servent qu'à vous répondre.</p>
+  </form>
+
+</div></main>
+
+<footer class="pied"><div class="wrap">
+  <p class="signature"><span class="surligne">T'as la source ? On va la chercher.</span></p>
+  <p>SOURCE ? est un collectif de chercheurs. Toutes les contributions sont bénévoles ; le média n'a ni financement ni partenaire.</p>
+  <p class="reseaux"><a href="https://www.instagram.com/source.media.france/">Instagram</a> · <a href="https://www.tiktok.com/@source.media.france">TikTok</a> · <a href="https://www.linkedin.com/company/source-media-france/">LinkedIn</a> · <a href="mailto:source.media.france@gmail.com">source.media.france@gmail.com</a></p>
+  <p>Une erreur dans une vidéo ? <a href="corrections.html">Signalez-la</a>. Vous êtes chercheur ou chercheuse ? <a href="contribuer.html">Proposez un script</a>.</p>
+  <p class="meta">Site de coulisses de SOURCE ? · <a href="contact.html">contact</a></p>
+</div></footer>
+<script src="site.js?v=20261127"></script>
+</body>
+</html>

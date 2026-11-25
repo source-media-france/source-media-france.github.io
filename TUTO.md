@@ -266,9 +266,9 @@ Pour les corrections suivantes, ajouter une ligne en haut du tableau. **On ne su
 2. Dans `equipe.html`, chaque membre a un commentaire `<!-- Pour mettre une photo : … -->` qui donne la ligne exacte à mettre à la place du carré noir avec les initiales.
 3. Pour les liens, remplacer le commentaire `<!-- Liens : … -->` par la ligne qu'il contient, avec les vraies adresses.
 
-### 2.12 Le formulaire « Contribuer »
+### 2.12 Les formulaires « Contribuer »
 
-Les propositions arrivent par e-mail sur source.media.france@gmail.com, grâce au service gratuit FormSubmit. **La toute première fois**, FormSubmit envoie un e-mail « Activate Form » à cette adresse : il faut cliquer sur le bouton d'activation, sinon rien n'arrive. La limite de mots se change dans `contribuer.html` : chercher `data-max-mots="350"` et le texte « 350 mots au maximum ».
+Il y a trois formulaires, un par onglet : proposer un script (`contribuer.html`), proposer un sujet ou une question, ouvert à tous (`contribuer-sujet.html`), et devenir relecteur ou relectrice (`contribuer-relecture.html`). L'objet de l'e-mail dit de quel formulaire il vient. Les propositions arrivent par e-mail sur source.media.france@gmail.com, grâce au service gratuit FormSubmit. **La toute première fois**, FormSubmit envoie un e-mail « Activate Form » à cette adresse : il faut cliquer sur le bouton d'activation, sinon rien n'arrive. La limite de mots se change dans `contribuer.html` : chercher `data-max-mots="350"` et le texte « 350 mots au maximum ».
 
 ### 2.13 Ce qu'il vaut mieux demander à Claude
 

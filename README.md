@@ -17,7 +17,9 @@ videos/<vidéo>.html        Une page par vidéo
 videos/_modele.html        Le gabarit à copier pour une nouvelle vidéo
 a-propos.html              Notre mission, ce que SOURCE ? n'est pas, nos engagements, indépendance
 equipe.html                Qui sommes-nous ? Les cinq membres du comité directeur
-contribuer.html            Proposer un script (formulaire envoyé par e-mail via FormSubmit)
+contribuer.html            Proposer un script, pour les chercheurs (formulaire envoyé par e-mail via FormSubmit)
+contribuer-sujet.html      Proposer un sujet ou poser une question, ouvert à tous
+contribuer-relecture.html  Devenir relecteur ou relectrice
 contact.html               E-mail et réseaux
 merci.html                 Page affichée après l'envoi du formulaire
 notions.html               Les mots qu'on emploie, expliqués une fois

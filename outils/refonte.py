@@ -154,7 +154,7 @@ def doc(fname, titre, desc, sur, h1, sous, main, cur, sous_voix="nous"):
 <meta name="description" content="{desc}">
 <link rel="icon" href="{p}assets/logo/logo-jaune.png">
 {FONTS}
-<link rel="stylesheet" href="{p}style.css?v=20261126">
+<link rel="stylesheet" href="{p}style.css?v=20261127">
 </head>
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
@@ -176,7 +176,7 @@ def doc(fname, titre, desc, sur, h1, sous, main, cur, sous_voix="nous"):
 </div></main>
 
 {footer(p)}
-<script src="{p}site.js?v=20261126"></script>
+<script src="{p}site.js?v=20261127"></script>
 </body>
 </html>
 '''
@@ -339,6 +339,18 @@ doc("equipe.html", "Qui sommes-nous ? · SOURCE ?", "Les cinq membres du comité
     "à propos", "Qui sommes-nous ?", "Cinq chercheurs, un comité directeur, et une porte ouverte à tous les autres.", main, "apropos")
 
 # ------------------------------------------------------------------ 6. Contribuer
+ONGLETS = [("contribuer.html", "Proposer un script", "chercheurs"), ("contribuer-sujet.html", "Proposer un sujet ou une question", "tout le monde"), ("contribuer-relecture.html", "Devenir relecteur ou relectrice", "chercheurs")]
+def onglets(actif):
+    liens = "\n".join(f'    <a href="{h}"{" aria-current=" + chr(34) + "page" + chr(34) if h == actif else ""}><strong>{n}</strong><span>{q}</span></a>' for h, n, q in ONGLETS)
+    return f'  <nav class="onglets" aria-label="Façons de contribuer">\n{liens}\n  </nav>'
+
+def entete_form(sujet, merci):
+    return f'''    <input type="hidden" name="_subject" value="{sujet}">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://source-media-france.github.io/merci.html">
+    <input type="hidden" name="_autoresponse" value="{merci}">
+    <input type="text" name="_honey" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">'''
+
 STATUTS = ["Doctorant ou doctorante", "Post-doctorant ou post-doctorante", "ATER (attaché temporaire d'enseignement et de recherche)",
            "Maître ou maîtresse de conférences", "Maître ou maîtresse de conférences HDR", "Professeur ou professeure des universités",
            "Chargé ou chargée de recherche", "Directeur ou directrice de recherche", "Chercheur associé ou chercheuse associée",
@@ -348,7 +360,9 @@ FORMATS = ["Format libre", "LE CHIFFRE : une statistique qui circule", "L'ÉTUDE
            "ACTU : éclairer une actualité", "ON EST ALLÉ VOIR : remonter une piste", "3 MINUTES AVEC… : un phénomène ou sa propre recherche"]
 MAX_MOTS = 350
 opts = lambda xs: "\n".join(f'          <option>{x}</option>' for x in xs)
-main = f'''  <p>Chercheurs et chercheuses, nous sommes là pour vulgariser vos idées et vos connaissances. Vous connaissez un sujet, une étude, un chiffre qui circule mal ? Proposez-nous un script.</p>
+main = f'''{onglets("contribuer.html")}
+
+  <p>Chercheurs et chercheuses, nous sommes là pour vulgariser vos idées et vos connaissances. Vous connaissez un sujet, une étude, un chiffre qui circule mal ? Proposez-nous un script.</p>
 
   {num(1, "Comment ça se passe")}
 
@@ -418,6 +432,100 @@ main = f'''  <p>Chercheurs et chercheuses, nous sommes là pour vulgariser vos i
 doc("contribuer.html", "Contribuer · SOURCE ?", "Chercheurs et chercheuses : proposez un script de vidéo à SOURCE ?. Le comité le relit, vous validez, et la vidéo est publiée avec votre nom.",
     "contribuer", "Contribuer", "Vous écrivez le script, nous en faisons une vidéo, et vous validez avant toute publication.", main, "contribuer")
 
+# ------------------------------------------------------------------ 6 bis. Proposer un sujet (ouvert à tous)
+PUBLICS = ["Étudiant ou étudiante", "Lycéen ou lycéenne", "Enseignant ou enseignante", "Chercheur ou chercheuse", "Journaliste", "Autre"]
+MAX_SUJET = 200
+main = f'''{onglets("contribuer-sujet.html")}
+
+  <p>Un chiffre vous intrigue, une affirmation vous paraît bizarre, une question vous trotte dans la tête ? Proposez-la. Pas besoin d'être chercheur : les meilleures idées de vidéos viennent souvent de questions toutes simples.</p>
+
+  <div class="principe"><p>Une bonne question est précise. « Les jeunes et le travail » n'est pas une question. « Les jeunes travaillent-ils moins que leurs parents au même âge ? » en est une.</p></div>
+
+  {num(1, "Proposer un sujet ou poser une question", "formulaire")}
+
+  <form class="formulaire" action="https://formsubmit.co/{EMAIL}" method="POST">
+{entete_form("SOURCE ? : nouvelle question ou idée de sujet", "Merci pour votre question ! Le comité de SOURCE ? la lit. Si elle devient une vidéo, nous vous le dirons. T'as la source ? On va la chercher.")}
+
+    <div class="deux">
+      <label><span class="libelle">Prénom ou pseudo</span><input type="text" name="nom" autocomplete="given-name"></label>
+      <label><span class="libelle">Adresse e-mail <span class="aide">si vous voulez une réponse</span></span><input type="email" name="email" autocomplete="email"></label>
+    </div>
+    <label><span class="libelle">Vous êtes</span>
+      <select name="profil">
+        <option value="" selected>Je préfère ne pas le dire</option>
+{opts(PUBLICS)}
+      </select>
+    </label>
+    <label><span class="libelle">Votre sujet ou votre question <span class="requis">*</span> <span class="aide">{MAX_SUJET} mots au maximum</span></span>
+      <textarea name="question" rows="7" required data-max-mots="{MAX_SUJET}" placeholder="par exemple : on entend partout que… est-ce vrai ?"></textarea>
+      <span class="compteur" aria-live="polite"></span>
+    </label>
+    <label><span class="libelle">Où l'avez-vous vu ? <span class="aide">un lien vers la vidéo, l'article ou le post, si vous l'avez</span></span>
+      <input type="text" name="lien">
+    </label>
+
+    <button type="submit">Envoyer ma question</button>
+    <p class="meta">Le formulaire passe par le service FormSubmit, qui transmet votre message à {EMAIL}. Vos informations ne servent qu'à vous répondre.</p>
+  </form>'''
+doc("contribuer-sujet.html", "Proposer un sujet · SOURCE ?", "Proposez un sujet ou posez une question à SOURCE ? : un chiffre qui vous intrigue, une affirmation qui vous paraît bizarre. Ouvert à tout le monde.",
+    "contribuer", "Proposer un sujet", "Une question, un chiffre qui circule, une affirmation qui vous paraît bizarre : dites-le-nous.", main, "contribuer")
+
+# ------------------------------------------------------------------ 6 ter. Devenir relecteur ou relectrice
+DISPOS = ["Une relecture par mois", "Deux ou trois par mois", "Ponctuellement, quand un sujet touche ma spécialité"]
+main = f'''{onglets("contribuer-relecture.html")}
+
+  <p>Chaque script est relu avant d'être tourné. Quand un sujet sort de notre spécialité, nous cherchons un chercheur ou une chercheuse du domaine pour vérifier que ce que dit la vidéo correspond à l'état des connaissances.</p>
+
+  {num(1, "Ce qu'on vous demande")}
+
+  <ul>
+    <li><strong>Relire un script court</strong>, de quelques centaines de mots au plus, avec ses sources.</li>
+    <li><strong>Vérifier le fond</strong> : les chiffres, ce que disent les études citées, le degré de certitude des mots employés. La forme, c'est notre travail.</li>
+    <li><strong>Répondre dans un délai raisonnable</strong>, convenu avec le comité pour chaque script. Vous pouvez toujours refuser un sujet.</li>
+    <li><strong>Signaler tout conflit d'intérêts</strong>, économique ou politique, avec le sujet.</li>
+  </ul>
+
+  {num(2, "Proposer de relire", "formulaire")}
+
+  <form class="formulaire" action="https://formsubmit.co/{EMAIL}" method="POST">
+{entete_form("SOURCE ? : proposition de relecture", "Merci de proposer votre aide ! Le comité de SOURCE ? vous écrira quand un script touchera votre domaine. T'as la source ? On va la chercher.")}
+
+    <div class="deux">
+      <label><span class="libelle">Prénom et nom <span class="requis">*</span></span><input type="text" name="nom" required autocomplete="name"></label>
+      <label><span class="libelle">Adresse e-mail <span class="requis">*</span></span><input type="email" name="email" required autocomplete="email"></label>
+    </div>
+    <div class="deux">
+      <label><span class="libelle">Statut <span class="requis">*</span></span>
+        <select name="statut" required>
+          <option value="" disabled selected>Choisir…</option>
+{opts(STATUTS)}
+        </select>
+      </label>
+      <label><span class="libelle">Affiliation <span class="requis">*</span></span><input type="text" name="affiliation" required placeholder="laboratoire, université ou organisme"></label>
+    </div>
+    <div class="deux">
+      <label><span class="libelle">Discipline <span class="requis">*</span></span><input type="text" name="discipline" required placeholder="économie, sociologie, épidémiologie…"></label>
+      <label><span class="libelle">Disponibilité</span>
+        <select name="disponibilite">
+{opts(DISPOS)}
+        </select>
+      </label>
+    </div>
+    <label><span class="libelle">Vos domaines de spécialité <span class="requis">*</span> <span class="aide">les sujets sur lesquels vous pouvez relire</span></span>
+      <textarea name="domaines" rows="4" required data-max-mots="150"></textarea>
+      <span class="compteur" aria-live="polite"></span>
+    </label>
+    <label><span class="libelle">Une page qui présente vos travaux <span class="aide">page personnelle, page de laboratoire, Google Scholar, HAL…</span></span>
+      <input type="text" name="page">
+    </label>
+    <label class="choix"><input type="checkbox" name="engagement" value="oui" required> J'ai lu les engagements de SOURCE ? et je signalerai tout conflit d'intérêts avec un sujet qu'on me propose de relire. <span class="requis">*</span></label>
+
+    <button type="submit">Proposer de relire</button>
+    <p class="meta">Le formulaire passe par le service FormSubmit, qui transmet votre message à {EMAIL}. Vos informations ne servent qu'à vous recontacter pour une relecture.</p>
+  </form>'''
+doc("contribuer-relecture.html", "Devenir relecteur · SOURCE ?", "Chercheurs et chercheuses : proposez de relire les scripts de SOURCE ? dans votre domaine.",
+    "contribuer", "Devenir relecteur ou relectrice", "Vous connaissez un domaine ? Aidez-nous à vérifier que nos vidéos disent juste.", main, "contribuer")
+
 # ------------------------------------------------------------------ 7. Contact
 main = f'''  <div class="contacts">
     <a class="contact" href="mailto:{EMAIL}"><span class="format">e-mail</span><strong>{EMAIL}</strong><span>questions, signalements d'erreur, chercheurs intéressés</span></a>
@@ -428,7 +536,8 @@ main = f'''  <div class="contacts">
 
   <ul>
     <li>Pour <strong>signaler une erreur</strong> : écrivez-nous en indiquant la vidéo, le moment et la source qui vous fait penser qu'il y a une erreur. Voir <a href="corrections.html">les corrections</a>.</li>
-    <li>Pour <strong>proposer un script</strong> : passez par <a href="contribuer.html">le formulaire</a>.</li>
+    <li>Pour <strong>proposer un sujet ou poser une question</strong> : passez par <a href="contribuer-sujet.html">ce formulaire</a>, ouvert à tout le monde.</li>
+    <li>Pour <strong>proposer un script</strong> ou <strong>devenir relecteur</strong>, si vous êtes chercheur ou chercheuse : voir <a href="contribuer.html">Contribuer</a>.</li>
     <li>Pour <strong>une question sur une vidéo</strong> : posez-la en commentaire. Une bonne question est souvent le sujet d'une prochaine vidéo.</li>
   </ul>'''
 doc("contact.html", "Contact · SOURCE ?", "Où trouver SOURCE ? : e-mail, Instagram, TikTok et LinkedIn.",
@@ -436,12 +545,12 @@ doc("contact.html", "Contact · SOURCE ?", "Où trouver SOURCE ? : e-mail, Insta
 
 # ------------------------------------------------------------------ 8. Merci
 doc("merci.html", "Merci · SOURCE ?", "Votre proposition a bien été envoyée.", "contribuer", "Merci !",
-    "Votre proposition est bien partie.", '''  <p>Le comité directeur la lit et vous répond à l'adresse que vous avez indiquée. Un e-mail de confirmation vient de vous être envoyé.</p>
+    "Votre message est bien parti.", '''  <p>Le comité directeur le lit. Si vous avez laissé une adresse e-mail, nous vous répondrons, et un e-mail de confirmation vient de vous être envoyé.</p>
 
   <p><a href="videos/calendrier.html">Voir les prochaines vidéos</a> · <a href="index.html">Revenir à l'accueil</a></p>''', "contribuer")
 
 # ------------------------------------------------------------------ 9. Menu et pied de page des autres pages
-NEW = {"videos/calendrier.html", "videos/index.html", "a-propos.html", "equipe.html", "contribuer.html", "contact.html", "merci.html"} | {f"videos/{k}.html" for k, *_ in THEMES}
+NEW = {"videos/calendrier.html", "videos/index.html", "a-propos.html", "equipe.html", "contribuer.html", "contribuer-sujet.html", "contribuer-relecture.html", "contact.html", "merci.html"} | {f"videos/{k}.html" for k, *_ in THEMES}
 for f in sorted(glob.glob("*.html") + glob.glob("videos/*.html")):
     if f in NEW: continue
     t = open(f, encoding="utf-8").read()
