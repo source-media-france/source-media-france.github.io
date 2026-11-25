@@ -55,7 +55,7 @@ V = [
       x="La différence entre le déficit et la dette, et pourquoi la dette monte tant que le déficit dépasse ce qui est remboursé : l'image de la baignoire."),
  dict(t="Corruption, épisode 2 : la mesure", th="corruption", ep=2, date="2026-12-11", a="AR",
       x="Comment mesure-t-on quelque chose de caché ? Page en préparation."),
- dict(t="Les dépenses d'éducation en France", th="education", date="2026-12-14",
+ dict(t="Les dépenses d'éducation en France", th="education", date="2026-12-14", a="MT",
       x="Combien la France dépense pour l'école, et ce que la recherche en dit. Page en préparation."),
  # pilotes
  # date à fixer
@@ -299,7 +299,7 @@ doc("a-propos.html", "Notre mission · SOURCE ?", "La mission de SOURCE ?, ce qu
 MEMBRES = [
     ("HB", "Membre du comité directeur. Elle présente les vidéos « Comprendre les chiffres », publie sur Instagram, TikTok et Facebook, et prépare les vidéos sur l'éducation et les violences conjugales."),
     ("MC", "Membre du comité directeur."),
-    ("MT", "Membre du comité directeur. Elle porte la série sur l'immigration."),
+    ("MT", "Membre du comité directeur. Elle porte la série sur l'immigration et prépare la vidéo sur les dépenses d'éducation."),
     ("MF", "Membre du comité directeur. Il porte la série sur la dette publique et publie sur LinkedIn."),
     ("AR", "Membre du comité directeur. Il porte la série sur la corruption et a construit l'espace de travail du collectif."),
 ]
