@@ -141,21 +141,9 @@ Pour une base de données, même chose dans la liste « Les bases de données ut
 
 Pour un article de recherche, le meilleur lien est son **DOI**, une adresse qui ne change jamais : `https://doi.org/` suivi du code de l'article (on le trouve sur la première page de l'article ou sur la page de la revue).
 
-### 2.4 Remplir la relecture
+### 2.4 La relecture
 
-Dans la page de la vidéo, section « Relecture et validation », chaque étape est une ligne. Remplacer :
-
-```html
-<tr><td>Relecture scientifique</td><td class="gris">à compléter</td><td class="gris">en cours</td></tr>
-```
-
-par :
-
-```html
-<tr><td>Relecture scientifique</td><td>[[Prénom Nom · discipline]]</td><td>fait</td></tr>
-```
-
-Pour ajouter un second relecteur, copier la ligne entière et la coller juste en dessous.
+Pour l'instant, les pages des vidéos n'affichent pas le nom des relecteurs. Si le comité décide de les publier, demander à Claude d'ajouter la section « Relecture et validation » à chaque page.
 
 ### 2.5 Ajouter une nouvelle vidéo
 
@@ -280,7 +268,7 @@ Pour les corrections suivantes, ajouter une ligne en haut du tableau. **On ne su
 
 ### 2.12 Le formulaire « Contribuer »
 
-Les propositions arrivent par e-mail sur source.media.france@gmail.com, grâce au service gratuit FormSubmit. **La toute première fois**, FormSubmit envoie un e-mail « Activate Form » à cette adresse : il faut cliquer sur le bouton d'activation, sinon rien n'arrive. La limite de mots se change dans `contribuer.html` : chercher `data-max-mots="300"` et le texte « 300 mots au maximum ».
+Les propositions arrivent par e-mail sur source.media.france@gmail.com, grâce au service gratuit FormSubmit. **La toute première fois**, FormSubmit envoie un e-mail « Activate Form » à cette adresse : il faut cliquer sur le bouton d'activation, sinon rien n'arrive. La limite de mots se change dans `contribuer.html` : chercher `data-max-mots="350"` et le texte « 350 mots au maximum ».
 
 ### 2.13 Ce qu'il vaut mieux demander à Claude
 

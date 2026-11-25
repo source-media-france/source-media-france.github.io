@@ -296,6 +296,13 @@ doc("a-propos.html", "Notre mission · SOURCE ?", "La mission de SOURCE ?, ce qu
     "à propos", "Notre mission", "Un média fait par des chercheurs, pour comprendre ce qui circule.", main, "apropos")
 
 # ------------------------------------------------------------------ 5. Qui sommes-nous ?
+LIENS = {
+    "HB": [("Site", "https://hannabony.com/"), ("LinkedIn", "https://www.linkedin.com/in/hannabony/")],
+    "MC": [("Site", "https://melchiorclerc.github.io/")],
+    "MT": [("Site", "https://marinedetalance.weebly.com/"), ("LinkedIn", "https://www.linkedin.com/in/marine-de-talanc%C3%A9-71893b46/")],
+    "MF": [("Site", "https://marinferry.github.io/"), ("LinkedIn", "https://www.linkedin.com/in/marin-ferry/")],
+    "AR": [("LinkedIn", "https://www.linkedin.com/in/andrearouchon/")],
+}
 MEMBRES = [
     ("HB", "Membre du comité directeur. Elle présente les vidéos « Comprendre les chiffres », publie sur Instagram, TikTok et Facebook, et prépare les vidéos sur l'éducation et les violences conjugales."),
     ("MC", "Membre du comité directeur."),
@@ -316,7 +323,7 @@ for k, role in MEMBRES:
         <h3>{nom}</h3>
         <p class="titre-membre">{t}</p>
         <p>{role}</p>
-        <!-- Liens : <p class="liens"><a href="…">Site</a> · <a href="…">LinkedIn</a></p> -->
+        <p class="liens">{" · ".join(f'<a href="{u}">{l}</a>' for l, u in LIENS[k])}</p>
       </div>
     </article>''')
 main = f'''  <p>SOURCE ? a été fondé par cinq chercheurs, qui forment son comité directeur. Le comité tient la ligne éditoriale, choisit les sujets, relit et valide chaque script et chaque vidéo avant publication. Pendant les deux premiers mois, ce sont aussi les visages des vidéos.</p>
@@ -339,7 +346,7 @@ STATUTS = ["Doctorant ou doctorante", "Post-doctorant ou post-doctorante", "ATER
            "Chercheur ou chercheuse hors université (organisme public, institut, association)", "Autre"]
 FORMATS = ["Format libre", "LE CHIFFRE : une statistique qui circule", "L'ÉTUDE : une étude comme point de départ", "REACT : réagir à un contenu",
            "ACTU : éclairer une actualité", "ON EST ALLÉ VOIR : remonter une piste", "3 MINUTES AVEC… : un phénomène ou sa propre recherche"]
-MAX_MOTS = 300
+MAX_MOTS = 350
 opts = lambda xs: "\n".join(f'          <option>{x}</option>' for x in xs)
 main = f'''  <p>Chercheurs et chercheuses, nous sommes là pour vulgariser vos idées et vos connaissances. Vous connaissez un sujet, une étude, un chiffre qui circule mal ? Proposez-nous un script.</p>
 
@@ -386,7 +393,7 @@ main = f'''  <p>Chercheurs et chercheuses, nous sommes là pour vulgariser vos i
       </label>
     </div>
     <label><span class="libelle">La question de la vidéo <span class="requis">*</span></span><input type="text" name="question" required maxlength="200" placeholder="par exemple : les jeunes travaillent-ils moins que leurs parents ?"></label>
-    <label><span class="libelle">Le script <span class="requis">*</span> <span class="aide">{MAX_MOTS} mots au maximum, soit environ deux minutes de vidéo</span></span>
+    <label><span class="libelle">Le script <span class="requis">*</span> <span class="aide">{MAX_MOTS} mots au maximum, soit un peu plus de deux minutes de vidéo</span></span>
       <textarea name="script" rows="12" required data-max-mots="{MAX_MOTS}"></textarea>
       <span class="compteur" aria-live="polite"></span>
     </label>

@@ -93,9 +93,8 @@ Ces points sont marqués dans les pages par un encadré gris « EN DISCUSSION »
 - **Les vidéos d'Andrea sur la corruption** : pas encore de script, donc pas de page.
 - **La vidéo sur la taille des classes** : deux phrases du script à corriger (encadré sur sa page).
 - **Les sources de Marin** : à confirmer, et la source des graphiques de sa deuxième vidéo.
-- **Les noms des relecteurs** de chaque vidéo, section « Relecture et validation ».
-- **Les photos et les liens** des membres, sur `equipe.html`.
-- **Le formulaire Contribuer** : à activer par le premier e-mail de FormSubmit ; limite de mots provisoire (300).
+- **Les photos** des membres, sur `equipe.html` (les liens sont en place).
+- **Le formulaire Contribuer** : à activer par le premier e-mail de FormSubmit ; limite de 350 mots.
 - **Les deux pilotes** (risque relatif, corrélation) ont été retirés du site le 26 novembre, pour une publication plus tard : ils sont dans l'historique git.
 - **Les plateformes** : les pages mentionnent TikTok et Instagram ; ajouter YouTube Shorts, X ou LinkedIn si le comité les retient (point 2).
 

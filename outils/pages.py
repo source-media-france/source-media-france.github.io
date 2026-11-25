@@ -64,7 +64,6 @@ def page(fname, titre, desc, sur, accroche, statut, fiche, explication, montre, 
         sections.append(("Les données et les calculs", donnees))
     rel = '<div class="table-scroll"><table>\n    <tr><th>Étape</th><th>Qui</th><th>Statut</th></tr>\n' + "\n".join(
         "    <tr><td>" + e + "</td><td" + (GRIS_C if q.startswith("à ") else "") + ">" + q + "</td><td" + (GRIS_C if s != "fait" else "") + ">" + s + "</td></tr>" for e, q, s in relecture) + '\n  </table></div>'
-    sections.append(("Relecture et validation", rel))
     sections.append(("Corrections", '<p>Aucune correction pour l\'instant. Une erreur ? <a href="../corrections.html">Signalez-la</a>.</p>'))
     body = "\n\n".join(f'  <h2><span class="num">{i}</span>{h}</h2>\n\n  {c}' for i, (h, c) in enumerate(sections, 1))
     head = re.sub(r'<title>.*?</title>', f'<title>{titre} · SOURCE ?</title>', HEAD)
