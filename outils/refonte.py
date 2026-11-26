@@ -154,7 +154,7 @@ def doc(fname, titre, desc, sur, h1, sous, main, cur, sous_voix="nous"):
 <meta name="description" content="{desc}">
 <link rel="icon" href="{p}assets/logo/logo-jaune.png">
 {FONTS}
-<link rel="stylesheet" href="{p}style.css?v=20261127">
+<link rel="stylesheet" href="{p}style.css?v=20261128">
 </head>
 <body>
 <a class="saut" href="#contenu">Aller au contenu</a>
@@ -176,7 +176,7 @@ def doc(fname, titre, desc, sur, h1, sous, main, cur, sous_voix="nous"):
 </div></main>
 
 {footer(p)}
-<script src="{p}site.js?v=20261127"></script>
+<script src="{p}site.js?v=20261128"></script>
 </body>
 </html>
 '''
@@ -304,12 +304,30 @@ LIENS = {
     "AR": [("LinkedIn", "https://www.linkedin.com/in/andrearouchon/")],
 }
 MEMBRES = [
-    ("HB", "Membre du comité directeur. Elle présente les vidéos « Comprendre les chiffres », publie sur Instagram, TikTok et Facebook, et prépare les vidéos sur l'éducation et les violences conjugales."),
+    ("HB", "Membre du comité directeur. Elle publie les vidéos sur Instagram, TikTok et Facebook."),
     ("MC", "Membre du comité directeur."),
-    ("MT", "Membre du comité directeur. Elle porte la série sur l'immigration et prépare la vidéo sur les dépenses d'éducation."),
-    ("MF", "Membre du comité directeur. Il porte la série sur la dette publique et publie sur LinkedIn."),
-    ("AR", "Membre du comité directeur. Il porte la série sur la corruption et a construit l'espace de travail du collectif."),
+    ("MT", "Membre du comité directeur."),
+    ("MF", "Membre du comité directeur. Il publie les vidéos sur LinkedIn."),
+    ("AR", "Membre du comité directeur. Il a construit l'espace de travail du collectif."),
 ]
+SPECIALITES = {
+    "HB": "Violences faites aux femmes, normes sociales, évaluation des politiques publiques",
+    "MC": "Migrations et dynamiques familiales",
+    "MT": "Économie de l'éducation, migrations, évaluation des politiques publiques",
+    "MF": "Financement international et intérieur, économie politique, politiques environnementales",
+    "AR": "Corruption, dette, performances des firmes",
+}
+SERIES = {
+    "HB": ["le-media", "comprendre-les-chiffres", "education", "violences"],
+    "MC": [],
+    "MT": ["immigration", "education"],
+    "MF": ["dette-publique"],
+    "AR": ["corruption"],
+}
+def serie_html(k):
+    if not SERIES[k]: return ""
+    liens = ", ".join(f'<a href="videos/{s}.html">{TH[s][0]}</a>' for s in SERIES[k])
+    return f'\n        <p><span class="etiquette-membre">Ses vidéos</span> {liens}</p>'
 fiches = []
 for k, role in MEMBRES:
     nom, titre, etab = PERS[k]
@@ -323,6 +341,7 @@ for k, role in MEMBRES:
         <h3>{nom}</h3>
         <p class="titre-membre">{t}</p>
         <p>{role}</p>
+        <p><span class="etiquette-membre">Spécialités</span> {SPECIALITES[k]}</p>{serie_html(k)}
         <p class="liens">{" · ".join(f'<a href="{u}">{l}</a>' for l, u in LIENS[k])}</p>
       </div>
     </article>''')

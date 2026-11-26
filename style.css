@@ -464,3 +464,4 @@ h3.jour + .cartes { margin-top: 0.8rem; }
 .onglets a:hover { background: var(--papier); }
 .onglets a[aria-current="page"] { background: var(--jaune); }
 .onglets a[aria-current="page"] span { color: var(--encre); }
+.etiquette-membre { font-family: var(--mono); font-size: 0.75rem; font-weight: 700; background: var(--papier); padding: 0.05em 0.4em; margin-right: 0.3em; }
